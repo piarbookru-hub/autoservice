@@ -20,6 +20,7 @@
             line-height: 1.6;
         }
 
+        /* NAVIGATION */
         nav {
             position: fixed;
             top: 0;
@@ -63,6 +64,7 @@
             color: #ff6b00;
         }
 
+        /* HERO */
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.6)), 
@@ -120,6 +122,7 @@
             box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
         }
 
+        /* SECTIONS */
         section {
             padding: 100px 20px;
             max-width: 1200px;
@@ -133,6 +136,7 @@
             color: #ff6b00;
         }
 
+        /* SERVICES */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -163,6 +167,7 @@
             margin-bottom: 15px;
         }
 
+        /* PRICING */
         .pricing-table {
             background: #1a1a1a;
             border-radius: 20px;
@@ -191,6 +196,7 @@
             font-size: 20px;
         }
 
+        /* GALLERY */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -216,6 +222,7 @@
             transform: scale(1.1);
         }
 
+        /* TEAM */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -255,6 +262,7 @@
             margin-bottom: 5px;
         }
 
+        /* CONTACT */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -305,6 +313,7 @@
             min-height: 120px;
         }
 
+        /* FAQ */
         .faq-item {
             background: #1a1a1a;
             margin-bottom: 15px;
@@ -341,6 +350,7 @@
             transform: rotate(180deg);
         }
 
+        /* STATS */
         .stats {
             background: linear-gradient(135deg, #ff6b00, #ff8c00);
             padding: 80px 20px;
@@ -358,393 +368,4 @@
 
         .stat-number {
             font-size: 64px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #0a0a0a;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid #2a2a2a;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 48px;
-                text-shadow:
-                    0 0 5px rgba(255, 165, 0, 1),
-                    0 0 15px rgba(255, 140, 0, 0.8),
-                    0 0 30px rgba(255, 107, 0, 0.5);
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            h2 {
-                font-size: 36px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">АВТОМАСТЕР PRO</div>
-            <ul class="nav-links">
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#pricing">Цены</a></li>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#team">Команда</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Профессиональный автосервис</h1>
-            <p>Ремонт любой сложности с гарантией качества. Современные технологии и опытные мастера.</p>
-            <a href="#contact" class="btn">Записаться на ремонт</a>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>О нас</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-            <img src="images/about.jpg" alt="Автосервис" style="width: 100%; border-radius: 20px;">
-            <div>
-                <h3 style="font-size: 32px; margin-bottom: 20px; color: #ff6b00;">15 лет безупречной работы</h3>
-                <p style="font-size: 18px; line-height: 1.8; color: #ccc;">
-                    Мы — команда профессионалов с многолетним опытом в ремонте автомобилей любой марки и сложности. 
-                    Наш автосервис оснащён современным оборудованием, что позволяет выполнять работы быстро и качественно.
-                </p>
-                <p style="font-size: 18px; line-height: 1.8; color: #ccc; margin-top: 20px;">
-                    Мы ценим каждого клиента и гарантируем честность, прозрачность цен и высокое качество работ.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <div class="stats">
-        <div class="stats-grid">
-            <div>
-                <div class="stat-number">15+</div>
-                <div>Лет опыта</div>
-            </div>
-            <div>
-                <div class="stat-number">10000+</div>
-                <div>Довольных клиентов</div>
-            </div>
-            <div>
-                <div class="stat-number">25+</div>
-                <div>Специалистов</div>
-            </div>
-            <div>
-                <div class="stat-number">98%</div>
-                <div>Рекомендуют нас</div>
-            </div>
-        </div>
-    </div>
-
-    <section id="services">
-        <h2>Наши услуги</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-laptop"></i></div>
-                <h3>Диагностика</h3>
-                <p>Компьютерная диагностика всех систем автомобиля. Выявление неисправностей на ранней стадии.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-oil-can"></i></div>
-                <h3>ТО и обслуживание</h3>
-                <p>Плановое техническое обслуживание, замена масла, фильтров, тормозных колодок.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-car-crash"></i></div>
-                <h3>Кузовной ремонт</h3>
-                <p>Восстановление после ДТП, рихтовка, покраска, полировка кузова.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-gears"></i></div>
-                <h3>Ремонт двигателя</h3>
-                <p>Капитальный и текущий ремонт двигателей любой сложности.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-car-battery"></i></div>
-                <h3>Электрика</h3>
-                <p>Диагностика и ремонт электрооборудования, установка сигнализаций.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-rotate"></i></div>
-                <h3>Шиномонтаж</h3>
-                <p>Сезонная замена шин, балансировка, ремонт проколов.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing">
-        <h2>Цены на услуги</h2>
-        <div class="pricing-table">
-            <div class="pricing-row">
-                <span>Компьютерная диагностика</span>
-                <span class="price">от 1 500 ₽</span>
-            </div>
-            <div class="pricing-row">
-                <span>Замена масла и фильтров</span>
-                <span class="price">от 2 000 ₽</span>
-            </div>
-            <div class="pricing-row">
-                <span>Замена тормозных колодок</span>
-                <span class="price">от 1 800 ₽</span>
-            </div>
-            <div class="pricing-row">
-                <span>Замена ремня ГРМ</span>
-                <span class="price">от 8 000 ₽</span>
-            </div>
-            <div class="pricing-row">
-                <span>Ремонт подвески</span>
-                <span class="price">от 5 000 ₽</span>
-            </div>
-            <div class="pricing-row">
-                <span>Кузовной ремонт (элемент)</span>
-                <span class="price">от 7 000 ₽</span>
-            </div>
-            <div class="pricing-row">
-                <span>Покраска элемента</span>
-                <span class="price">от 9 000 ₽</span>
-            </div>
-            <div class="pricing-row">
-                <span>Шиномонтаж (4 колеса)</span>
-                <span class="price">от 2 500 ₽</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <h2>Наши работы</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/work1.jpg" alt="Работа 1">
-            </div>
-            <div class="gallery-item">
-                <img src="images/work2.jpg" alt="Работа 2">
-            </div>
-            <div class="gallery-item">
-                <img src="images/work3.jpg" alt="Работа 3">
-            </div>
-            <div class="gallery-item">
-                <img src="images/work4.jpg" alt="Работа 4">
-            </div>
-            <div class="gallery-item">
-                <img src="images/work5.jpg" alt="Работа 5">
-            </div>
-            <div class="gallery-item">
-                <img src="images/work6.jpg" alt="Работа 6">
-            </div>
-        </div>
-    </section>
-
-    <section id="team">
-        <h2>Наша команда</h2>
-        <div class="team-grid">
-            <div class="team-card">
-                <img src="images/team1.jpg" alt="Мастер" class="team-photo">
-                <h3>Иван Петров</h3>
-                <p style="color: #ff6b00;">Главный механик</p>
-                <p>Опыт работы: 20 лет</p>
-            </div>
-            <div class="team-card">
-                <img src="images/team2.jpg" alt="Мастер" class="team-photo">
-                <h3>Сергей Иванов</h3>
-                <p style="color: #ff6b00;">Диагност</p>
-                <p>Опыт работы: 15 лет</p>
-            </div>
-            <div class="team-card">
-                <img src="images/team3.jpg" alt="Мастер" class="team-photo">
-                <h3>Алексей Смирнов</h3>
-                <p style="color: #ff6b00;">Кузовщик</p>
-                <p>Опыт работы: 18 лет</p>
-            </div>
-            <div class="team-card">
-                <img src="images/team4.jpg" alt="Мастер" class="team-photo">
-                <h3>Михаил Козлов</h3>
-                <p style="color: #ff6b00;">Электрик</p>
-                <p>Опыт работы: 12 лет</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq">
-        <h2>Частые вопросы</h2>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Как записаться на ремонт?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Вы можете записаться по телефону, через форму на сайте или просто приехать к нам. Мы работаем без выходных с 9:00 до 21:00.
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Даёте ли вы гарантию на работы?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Да, мы даём гарантию на все виды работ от 6 месяцев до 2 лет в зависимости от типа ремонта.
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Можно ли приехать со своими запчастями?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Конечно! Вы можете привезти свои запчасти, и мы установим их. Также мы можем помочь с подбором и закупкой запчастей по выгодным ценам.
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Сколько времени занимает ремонт?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Время зависит от сложности работ. Простое ТО — 1-2 часа, средний ремонт — 1 день, сложный кузовной ремонт — 3-7 дней. Мы всегда называем точные сроки после диагностики.
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Работаете ли вы с юридическими лицами?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Да, мы работаем как с физическими, так и с юридическими лицами. Предоставляем все необходимые документы для бухгалтерии.
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Контакты</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong>Адрес</strong><br>
-                        г. Москва, ул. Автомобильная, 15
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <strong>Телефон</strong><br>
-                        +7 (999) 123-45-67
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <strong>Email</strong><br>
-                        snpiarbook@yandex.ru
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <strong>Режим работы</strong><br>
-                        Пн-Вс: 9:00 - 21:00
-                    </div>
-                </div>
-            </div>
-            <form action="https://formspree.io/f/xvkkbvpd" method="POST">
-                <input type="hidden" name="_subject" value="Новая заявка с сайта АвтоМастер PRO">
-                
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Телефон" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="car" placeholder="Марка автомобиля">
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Опишите проблему" required></textarea>
-                </div>
-                <button type="submit" class="btn">Отправить заявку</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="logo" style="margin-bottom: 20px;">АВТОМАСТЕР PRO</div>
-        <p>© 2026 Все права защищены</p>
-        <div style="margin-top: 20px;">
-            <a href="#" style="color: #ff6b00; margin: 0 15px; font-size: 24px;"><i class="fab fa-vk"></i></a>
-            <a href="#" style="color: #ff6b00; margin: 0 15px; font-size: 24px;"><i class="fab fa-telegram"></i></a>
-            <a href="#" style="color: #ff6b00; margin: 0 15px; font-size: 24px;"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </footer>
-
-    <script>
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            observer.observe(section);
-        });
-    </script>
-</body>
-</html>
+           
