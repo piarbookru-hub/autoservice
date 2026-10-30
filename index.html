@@ -20,7 +20,6 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
         nav {
             position: fixed;
             top: 0;
@@ -64,7 +63,6 @@
             color: #ff6b00;
         }
 
-        /* HERO */
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.6)), 
@@ -122,7 +120,6 @@
             box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
         }
 
-        /* SECTIONS */
         section {
             padding: 100px 20px;
             max-width: 1200px;
@@ -136,7 +133,6 @@
             color: #ff6b00;
         }
 
-        /* SERVICES */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -167,7 +163,6 @@
             margin-bottom: 15px;
         }
 
-        /* PRICING */
         .pricing-table {
             background: #1a1a1a;
             border-radius: 20px;
@@ -196,7 +191,6 @@
             font-size: 20px;
         }
 
-        /* GALLERY */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -222,7 +216,6 @@
             transform: scale(1.1);
         }
 
-        /* TEAM */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -262,7 +255,6 @@
             margin-bottom: 5px;
         }
 
-        /* CONTACT */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -313,7 +305,6 @@
             min-height: 120px;
         }
 
-        /* FAQ */
         .faq-item {
             background: #1a1a1a;
             margin-bottom: 15px;
@@ -350,7 +341,6 @@
             transform: rotate(180deg);
         }
 
-        /* STATS */
         .stats {
             background: linear-gradient(135deg, #ff6b00, #ff8c00);
             padding: 80px 20px;
@@ -372,7 +362,6 @@
             margin-bottom: 10px;
         }
 
-        /* FOOTER */
         footer {
             background: #0a0a0a;
             padding: 40px 20px;
@@ -380,7 +369,6 @@
             border-top: 1px solid #2a2a2a;
         }
 
-        /* ANIMATIONS */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -392,7 +380,6 @@
             }
         }
 
-        /* MOBILE */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 48px;
@@ -421,7 +408,6 @@
     </style>
 </head>
 <body>
-    <!-- NAVIGATION -->
     <nav>
         <div class="nav-container">
             <div class="logo">АВТОМАСТЕР PRO</div>
@@ -438,7 +424,6 @@
         </div>
     </nav>
 
-    <!-- HERO -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Профессиональный автосервис</h1>
@@ -447,7 +432,6 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
         <h2>О нас</h2>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
@@ -465,7 +449,6 @@
         </div>
     </section>
 
-    <!-- STATS -->
     <div class="stats">
         <div class="stats-grid">
             <div>
@@ -487,7 +470,6 @@
         </div>
     </div>
 
-    <!-- SERVICES -->
     <section id="services">
         <h2>Наши услуги</h2>
         <div class="services-grid">
@@ -524,7 +506,6 @@
         </div>
     </section>
 
-    <!-- PRICING -->
     <section id="pricing">
         <h2>Цены на услуги</h2>
         <div class="pricing-table">
@@ -563,7 +544,6 @@
         </div>
     </section>
 
-    <!-- GALLERY -->
     <section id="gallery">
         <h2>Наши работы</h2>
         <div class="gallery-grid">
@@ -588,7 +568,6 @@
         </div>
     </section>
 
-    <!-- TEAM -->
     <section id="team">
         <h2>Наша команда</h2>
         <div class="team-grid">
@@ -619,7 +598,6 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq">
         <h2>Частые вопросы</h2>
         <div class="faq-item">
@@ -669,7 +647,6 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
         <h2>Контакты</h2>
         <div class="contact-grid">
@@ -703,10 +680,8 @@
                     </div>
                 </div>
             </div>
-            <form action="https://formsubmit.co/snpiarbook@yandex.ru" method="POST">
+            <form action="https://formspree.io/f/xvkkbvpd" method="POST">
                 <input type="hidden" name="_subject" value="Новая заявка с сайта АвтоМастер PRO">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://piarbook.ru">
                 
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Ваше имя" required>
@@ -725,7 +700,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="logo" style="margin-bottom: 20px;">АВТОМАСТЕР PRO</div>
         <p>© 2026 Все права защищены</p>
@@ -737,7 +711,6 @@
     </footer>
 
     <script>
-        // FAQ accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentElement;
@@ -745,7 +718,6 @@
             });
         });
 
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -756,7 +728,6 @@
             });
         });
 
-        // Scroll animation
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
