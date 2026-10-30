@@ -703,21 +703,26 @@
                     </div>
                 </div>
             </div>
-            <form>
-                <div class="form-group">
-                    <input type="text" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Телефон" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Марка автомобиля">
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Опишите проблему" required></textarea>
-                </div>
-                <button type="submit" class="btn">Отправить заявку</button>
-            </form>
+            <form action="https://formsubmit.co/snpiarbook@yandex.ru" method="POST">
+    <!-- Скрытые поля для FormSubmit -->
+    <input type="hidden" name="_subject" value="Новая заявка с сайта АвтоМастер PRO">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://piarbook.ru">
+    
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+    </div>
+    <div class="form-group">
+        <input type="tel" name="phone" placeholder="Телефон" required>
+    </div>
+    <div class="form-group">
+        <input type="text" name="car" placeholder="Марка автомобиля">
+    </div>
+    <div class="form-group">
+        <textarea name="message" placeholder="Опишите проблему" required></textarea>
+    </div>
+    <button type="submit" class="btn">Отправить заявку</button>
+</form>
         </div>
     </section>
 
