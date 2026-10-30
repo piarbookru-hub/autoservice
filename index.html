@@ -87,8 +87,14 @@
             font-size: 72px;
             font-weight: 800;
             margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            padding-top: 15px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #ff6b00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(255, 107, 0, 0.3);
         }
 
         .hero p {
@@ -214,25 +220,6 @@
 
         .gallery-item:hover img {
             transform: scale(1.1);
-        }
-
-        /* REVIEWS */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .review-card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 4px solid #ff6b00;
-        }
-
-        .stars {
-            color: #ffa500;
-            margin-bottom: 15px;
         }
 
         /* TEAM */
@@ -409,6 +396,7 @@
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 48px;
+                padding-top: 10px;
             }
 
             .hero p {
@@ -440,7 +428,6 @@
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#pricing">Цены</a></li>
                 <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#reviews">Отзывы</a></li>
                 <li><a href="#team">Команда</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Контакты</a></li>
@@ -594,46 +581,6 @@
             </div>
             <div class="gallery-item">
                 <img src="images/work6.jpg" alt="Работа 6">
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section id="reviews">
-        <h2>Отзывы клиентов</h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Отличный сервис! Быстро нашли проблему и устранили. Цены адекватные, мастера профессионалы."</p>
-                <strong style="display: block; margin-top: 15px; color: #ff6b00;">— Александр К.</strong>
-            </div>
-            <div class="review-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Обслуживаю машину здесь уже 3 года. Всегда качественно, честно и в срок. Рекомендую!"</p>
-                <strong style="display: block; margin-top: 15px; color: #ff6b00;">— Мария С.</strong>
-            </div>
-            <div class="review-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Делали кузовной ремонт после ДТП. Результат превзошёл ожидания, как новая машина!"</p>
-                <strong style="display: block; margin-top: 15px; color: #ff6b00;">— Дмитрий В.</strong>
             </div>
         </div>
     </section>
