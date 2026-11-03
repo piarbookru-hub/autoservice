@@ -9,7 +9,9 @@
                   background-color: white; /* Ensure the iframe has a white background */
                 }
 
-                .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+                .services-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+.hero { width: 100%; max-width: 100%; margin: 0; }
 
 
               </style>
@@ -39,7 +41,21 @@
         .nav-links a:hover { color: #ff6b00; }
         .burger { display: none; background: none; border: none; color: #ff6b00; font-size: 24px; cursor: pointer; padding: 5px 10px; }
         
-        .hero { min-height: 62vh; padding: 110px 20px 55px; background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.6)), url('images/hero.jpg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+        /* ========== HERO: ФОН НА ВСЮ ШИРИНУ ОКНА, ВЫСОТА ПРЕЖНЯЯ ========== */
+        .hero {
+            width: 100%;
+            max-width: 100%;   /* убираем ограничение в 1200px */
+            margin: 0;         /* прижимаем к краям окна */
+            min-height: 62vh;  /* высота НЕ изменилась */
+            padding: 110px 20px 55px;
+            background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.6)), url('images/hero.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
         .hero-content { max-width: 800px; animation: fadeInUp 1s ease-out; }
         .hero h1 {
             font-size: clamp(1.9rem, 7vw, 56px);
@@ -65,8 +81,13 @@
         .about-grid p { font-size: clamp(0.9rem, 2.3vw, 16px); line-height: 1.65; color: #ccc; }
         .about-grid p + p { margin-top: 10px; }
         
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-        .service-card { background: linear-gradient(135deg, #1a1a1a, #0f0f0f); padding: 22px; border-radius: 16px; border: 1px solid rgba(255,107,0,0.2); transition: transform 0.3s, border-color 0.3s; min-width: 0; }
+        /* ========== УСЛУГИ: РОВНО 3 В РЯД, КАК В ГАЛЕРЕЕ ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* фиксированные 3 колонки */
+            gap: 14px;                              /* тот же зазор, что в галерее */
+        }
+        .service-card { background: linear-gradient(135deg, #1a1a1a, #0f0f0f); padding: 22px; border-radius: 16px; border: 1px solid rgba(255,107,0,0.2); transition: transform 0.3s, border-color 0.3s; min-width: 0; display: flex; flex-direction: column; }
         .service-card:hover { transform: translateY(-6px); border-color: #ff6b00; }
         .service-icon { font-size: 34px; color: #ff6b00; margin-bottom: 10px; }
         .service-card h3 { font-size: 18px; margin-bottom: 7px; }
@@ -82,7 +103,7 @@
         /* ========== ГАЛЕРЕЯ: РОВНО 3 ФОТО В РЯД ========== */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* всегда 3 колонки */
+            grid-template-columns: repeat(3, 1fr);
             gap: 14px;
         }
         .gallery-item {
@@ -132,6 +153,8 @@
         @media (max-width: 900px) {
             .about-grid { grid-template-columns: 1fr; gap: 20px; }
             .gallery-item { height: 180px; }
+            .services-grid { gap: 10px; }
+            .service-card { padding: 18px 16px; }
         }
         
         /* ========== СМАРТФОН ========== */
@@ -154,6 +177,7 @@
             .nav-links.open { display: flex; }
             .nav-links li a { display: block; padding: 11px 22px; font-size: 14px; }
             
+            /* hero: по-прежнему на всю ширину, высота прежняя */
             .hero { min-height: 480px; padding: 85px 16px 40px; }
             .hero p { margin-bottom: 18px; }
             .btn { padding: 12px 28px; font-size: 15px; }
@@ -161,6 +185,7 @@
             section { padding: 28px 14px; }
             h2 { margin-bottom: 16px; }
             
+            /* услуги на телефоне: столбиком, чтобы текст читался */
             .services-grid { grid-template-columns: 1fr; gap: 10px; }
             .service-card { padding: 17px 16px; }
             .service-icon { font-size: 30px; margin-bottom: 8px; }
@@ -252,6 +277,7 @@
         </div>
     </div>
 
+    <!-- УСЛУГИ: 3 КАРТОЧКИ В РЯД, РОВНЫЕ РЯДЫ 3+3 -->
     <section id="services">
         <h2>Наши услуги</h2>
         <div class="services-grid">
@@ -302,7 +328,6 @@
         </div>
     </section>
 
-    <!-- БЛОК ПЕРЕИМЕНОВАН: 3 ФОТО В РЯД -->
     <section id="gallery">
         <h2>На рабочем месте</h2>
         <div class="gallery-grid">
