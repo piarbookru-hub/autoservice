@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+
+                .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+
+
+              </style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +39,6 @@
         .nav-links a:hover { color: #ff6b00; }
         .burger { display: none; background: none; border: none; color: #ff6b00; font-size: 24px; cursor: pointer; padding: 5px 10px; }
         
-        /* HERO: не во весь экран, а компактно */
         .hero { min-height: 62vh; padding: 110px 20px 55px; background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.6)), url('images/hero.jpg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
         .hero-content { max-width: 800px; animation: fadeInUp 1s ease-out; }
         .hero h1 {
@@ -40,7 +56,6 @@
         .btn { display: inline-block; padding: 13px 34px; background: linear-gradient(135deg, #ff6b00, #ff8c00); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 16px; transition: transform 0.3s, box-shadow 0.3s; border: none; cursor: pointer; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,107,0,0.4); }
         
-        /* СЕКЦИИ: плотно */
         section { padding: 44px 20px; max-width: 1200px; margin: 0 auto; }
         h2 { font-size: clamp(1.5rem, 4vw, 34px); text-align: center; margin-bottom: 22px; color: #ff6b00; }
         
@@ -64,9 +79,22 @@
         .pricing-row span:first-child { font-size: 15px; }
         .price { color: #ff6b00; font-weight: 800; font-size: 16px; text-align: right; white-space: nowrap; }
         
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-        .gallery-item { height: 190px; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; background: #1a1a1a; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        /* ========== ГАЛЕРЕЯ: РОВНО 3 ФОТО В РЯД ========== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* всегда 3 колонки */
+            gap: 14px;
+        }
+        .gallery-item {
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: #1a1a1a;
+            min-width: 0;
+        }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
         .gallery-item:hover img { transform: scale(1.1); }
         
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
@@ -91,7 +119,6 @@
         .faq-item.active .faq-answer { padding: 0 18px 14px; max-height: 400px; }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
         
-        /* СТАТИСТИКА: без гигантских отступов */
         .stats { background: linear-gradient(135deg, #ff6b00, #ff8c00); padding: 34px 20px; margin: 0; }
         .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; text-align: center; }
         .stat-number { font-size: clamp(2rem, 6vw, 44px); font-weight: 800; margin-bottom: 4px; line-height: 1.1; }
@@ -104,6 +131,7 @@
         /* ========== ПЛАНШЕТ ========== */
         @media (max-width: 900px) {
             .about-grid { grid-template-columns: 1fr; gap: 20px; }
+            .gallery-item { height: 180px; }
         }
         
         /* ========== СМАРТФОН ========== */
@@ -143,8 +171,9 @@
             .pricing-row span:first-child { font-size: 14px; }
             .price { text-align: left; font-size: 15px; }
             
-            .gallery-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-            .gallery-item { height: 130px; }
+            /* галерея: те же 3 в ряд, просто меньше */
+            .gallery-grid { gap: 8px; }
+            .gallery-item { height: 110px; border-radius: 8px; }
             
             .team-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
             .team-card { padding: 14px 10px; }
@@ -169,8 +198,8 @@
         
         /* ========== ОЧЕНЬ МАЛЕНЬКИЙ ЭКРАН ========== */
         @media (max-width: 400px) {
-            .gallery-grid { grid-template-columns: 1fr; }
-            .gallery-item { height: 180px; }
+            .gallery-grid { gap: 6px; }
+            .gallery-item { height: 95px; border-radius: 6px; }
             .team-grid { grid-template-columns: 1fr; }
             .stats-grid { gap: 12px; }
         }
@@ -186,7 +215,7 @@
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#pricing">Цены</a></li>
-                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#gallery">На рабочем месте</a></li>
                 <li><a href="#team">Команда</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Контакты</a></li>
@@ -273,15 +302,16 @@
         </div>
     </section>
 
+    <!-- БЛОК ПЕРЕИМЕНОВАН: 3 ФОТО В РЯД -->
     <section id="gallery">
-        <h2>Наши работы</h2>
+        <h2>На рабочем месте</h2>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/work1.jpg" alt="Работа 1"></div>
-            <div class="gallery-item"><img src="images/work2.jpg" alt="Работа 2"></div>
-            <div class="gallery-item"><img src="images/work3.jpg" alt="Работа 3"></div>
-            <div class="gallery-item"><img src="images/work4.jpg" alt="Работа 4"></div>
-            <div class="gallery-item"><img src="images/work5.jpg" alt="Работа 5"></div>
-            <div class="gallery-item"><img src="images/work6.jpg" alt="Работа 6"></div>
+            <div class="gallery-item"><img src="images/work1.jpg" alt="На рабочем месте 1"></div>
+            <div class="gallery-item"><img src="images/work2.jpg" alt="На рабочем месте 2"></div>
+            <div class="gallery-item"><img src="images/work3.jpg" alt="На рабочем месте 3"></div>
+            <div class="gallery-item"><img src="images/work4.jpg" alt="На рабочем месте 4"></div>
+            <div class="gallery-item"><img src="images/work5.jpg" alt="На рабочем месте 5"></div>
+            <div class="gallery-item"><img src="images/work6.jpg" alt="На рабочем месте 6"></div>
         </div>
     </section>
 
@@ -418,3 +448,11 @@
     </script>
 </body>
 </html>
+
+
+              <script>
+                              
+              </script>
+                        </body>
+                        </html>
+                    
