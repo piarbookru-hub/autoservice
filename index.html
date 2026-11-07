@@ -28,7 +28,7 @@
             max-width: 100%;
             margin: 0;
             min-height: 62vh;
-            padding: 110px 20px 28px;   /* было 55px снизу */
+            padding: 110px 20px 28px;
             background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.6)), url('images/hero.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -54,7 +54,7 @@
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,107,0,0.4); }
         
         /* ========== СЕКЦИИ: отступы сверху/снизу вдвое меньше ========== */
-        section { padding: 22px 20px; max-width: 1200px; margin: 0 auto; }   /* было 44px */
+        section { padding: 22px 20px; max-width: 1200px; margin: 0 auto; }
         h2 { font-size: clamp(1.5rem, 4vw, 34px); text-align: center; margin-bottom: 22px; color: #ff6b00; }
         
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
@@ -115,6 +115,29 @@
         .contact-item a { color: #fff; text-decoration: none; }
         .contact-item a:hover { color: #ff6b00; }
         
+        /* ========== ЯНДЕКС КАРТА ========== */
+        .map-container {
+            max-width: 1000px;
+            margin: 20px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            box-shadow: 0 8px 24px rgba(255, 107, 0, 0.1);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            display: block;
+            filter: invert(0.9) hue-rotate(180deg) brightness(0.95);
+        }
+        .map-label {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #888;
+        }
+        
         .faq-item { background: #1a1a1a; margin-bottom: 8px; border-radius: 10px; overflow: hidden; }
         .faq-question { padding: 14px 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; gap: 15px; font-size: 15px; font-weight: 600; }
         .faq-question:hover { background: #252525; }
@@ -123,7 +146,7 @@
         .faq-item.active .faq-question i { transform: rotate(180deg); }
         
         /* ========== СТАТИСТИКА: отступы вдвое меньше ========== */
-        .stats { background: linear-gradient(135deg, #ff6b00, #ff8c00); padding: 17px 20px; margin: 0; }   /* было 34px */
+        .stats { background: linear-gradient(135deg, #ff6b00, #ff8c00); padding: 17px 20px; margin: 0; }
         .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; text-align: center; }
         .stat-number { font-size: clamp(2rem, 6vw, 44px); font-weight: 800; margin-bottom: 4px; line-height: 1.1; }
         .stats-grid > div > div:last-child { font-size: 14px; }
@@ -138,6 +161,7 @@
             .gallery-item { height: 180px; }
             .services-grid { gap: 10px; }
             .service-card { padding: 18px 16px; }
+            .map-container iframe { height: 350px; }
         }
         
         /* ========== СМАРТФОН: все зазоры над заголовками вдвое ========== */
@@ -160,11 +184,11 @@
             .nav-links.open { display: flex; }
             .nav-links li a { display: block; padding: 11px 22px; font-size: 14px; }
             
-            .hero { min-height: 480px; padding: 85px 16px 20px; }   /* было 40px снизу */
+            .hero { min-height: 480px; padding: 85px 16px 20px; }
             .hero p { margin-bottom: 18px; }
             .btn { padding: 12px 28px; font-size: 15px; }
             
-            section { padding: 14px 14px; }   /* было 28px */
+            section { padding: 14px 14px; }
             h2 { margin-bottom: 16px; }
             
             .services-grid { grid-template-columns: 1fr; gap: 10px; }
@@ -190,13 +214,17 @@
             .faq-answer { padding: 0 14px; font-size: 13px; }
             .faq-item.active .faq-answer { padding: 0 14px 12px; }
             
-            .stats { padding: 13px 14px; }   /* было 26px */
+            .stats { padding: 13px 14px; }
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
             
             .contact-grid { grid-template-columns: 1fr; gap: 8px; }
             .contact-item { padding: 12px 14px; gap: 12px; }
             .contact-item i { font-size: 20px; }
             .contact-item div { font-size: 13px; }
+            
+            .map-container { margin-top: 16px; border-radius: 12px; }
+            .map-container iframe { height: 300px; }
+            .map-label { font-size: 12px; margin-top: 10px; }
             
             footer { padding: 18px 14px; }
         }
@@ -207,6 +235,7 @@
             .gallery-item { height: 95px; border-radius: 6px; }
             .team-grid { grid-template-columns: 1fr; }
             .stats-grid { gap: 12px; }
+            .map-container iframe { height: 260px; }
         }
     </style>
 </head>
@@ -378,7 +407,7 @@
         </div>
     </section>
 
-    <!-- КОНТАКТЫ БЕЗ ФОРМЫ -->
+    <!-- КОНТАКТЫ С ЯНДЕКС КАРТОЙ -->
     <section id="contact">
         <h2>Контакты</h2>
         <div class="contact-grid">
@@ -399,6 +428,12 @@
                 <div><strong>Режим работы</strong><br>Пн-Вс: 9:00 - 21:00</div>
             </div>
         </div>
+        
+        <!-- ЯНДЕКС КАРТА -->
+        <div class="map-container">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617635%2C55.755814&mode=search&sctx=ZAAAAAgBEAAaKAoSCc2Sj%2FLkFEUaETHI%2B4%2FkFEURiAEiDOz3wJ0BQABaDAgBMgBKAjoBagwIAjIwMjQwMTAxMTHoAQD8AQCoAQC9AQE3MDgwNg%3D%3D&sll=37.617635%2C55.755814&sspn=0.021755%2C0.010803&text=%D0%B0%D0%B2%D1%82%D0%BE%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81&z=15" allowfullscreen="true" style="position:relative;"></iframe>
+        </div>
+        <p class="map-label">📍 г. Москва, ул. Автомобильная, 15 — рядом с ТТК, удобная парковка</p>
     </section>
 
     <footer>
