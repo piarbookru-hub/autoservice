@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+        html { -webkit-text-size-adjust: 100%; overflow-x: hidden; scroll-behavior: smooth; }
         body { font-family: 'Montserrat', sans-serif; background: #0a0a0a; color: #fff; line-height: 1.55; overflow-x: hidden; }
         p, span, h1, h2, h3, a, div { overflow-wrap: break-word; }
         img { max-width: 100%; height: auto; }
+        
+        /* ИСПРАВЛЕНИЕ: чтобы шапка не перекрывала заголовки при скролле */
+        section { scroll-margin-top: 80px; padding: 22px 20px; max-width: 1200px; margin: 0 auto; }
         
         nav { position: fixed; top: 0; width: 100%; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 12px 0; border-bottom: 1px solid rgba(255,107,0,0.2); }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; position: relative; }
@@ -22,39 +25,20 @@
         .nav-links a:hover { color: #ff6b00; }
         .burger { display: none; background: none; border: none; color: #ff6b00; font-size: 24px; cursor: pointer; padding: 5px 10px; }
         
-        /* ========== HERO: фон на всю ширину, низ урезан вдвое ========== */
         .hero {
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            min-height: 62vh;
-            padding: 110px 20px 28px;   /* было 55px снизу */
+            width: 100%; max-width: 100%; margin: 0; min-height: 62vh; padding: 110px 20px 28px;
             background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.6)), url('images/hero.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;
         }
         .hero-content { max-width: 800px; animation: fadeInUp 1s ease-out; }
         .hero h1 {
-            font-size: clamp(1.9rem, 7vw, 56px);
-            font-weight: 800;
-            margin-bottom: 12px;
-            line-height: 1.2;
-            color: #ffa500;
-            text-shadow:
-                0 0 5px rgba(255, 165, 0, 0.6),
-                0 0 15px rgba(255, 140, 0, 0.4),
-                0 0 30px rgba(255, 107, 0, 0.2);
+            font-size: clamp(1.9rem, 7vw, 56px); font-weight: 800; margin-bottom: 12px; line-height: 1.2; color: #ffa500;
+            text-shadow: 0 0 5px rgba(255, 165, 0, 0.6), 0 0 15px rgba(255, 140, 0, 0.4), 0 0 30px rgba(255, 107, 0, 0.2);
         }
         .hero p { font-size: clamp(0.95rem, 2.6vw, 19px); margin-bottom: 22px; color: #ccc; }
         .btn { display: inline-block; padding: 13px 34px; background: linear-gradient(135deg, #ff6b00, #ff8c00); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 16px; transition: transform 0.3s, box-shadow 0.3s; border: none; cursor: pointer; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,107,0,0.4); }
         
-        /* ========== СЕКЦИИ: отступы сверху/снизу вдвое меньше ========== */
-        section { padding: 22px 20px; max-width: 1200px; margin: 0 auto; }   /* было 44px */
         h2 { font-size: clamp(1.5rem, 4vw, 34px); text-align: center; margin-bottom: 22px; color: #ff6b00; }
         
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
@@ -63,12 +47,7 @@
         .about-grid p { font-size: clamp(0.9rem, 2.3vw, 16px); line-height: 1.65; color: #ccc; }
         .about-grid p + p { margin-top: 10px; }
         
-        /* ========== УСЛУГИ: РОВНО 3 В РЯД ========== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
         .service-card { background: linear-gradient(135deg, #1a1a1a, #0f0f0f); padding: 22px; border-radius: 16px; border: 1px solid rgba(255,107,0,0.2); transition: transform 0.3s, border-color 0.3s; min-width: 0; display: flex; flex-direction: column; }
         .service-card:hover { transform: translateY(-6px); border-color: #ff6b00; }
         .service-icon { font-size: 34px; color: #ff6b00; margin-bottom: 10px; }
@@ -82,21 +61,8 @@
         .pricing-row span:first-child { font-size: 15px; }
         .price { color: #ff6b00; font-weight: 800; font-size: 16px; text-align: right; white-space: nowrap; }
         
-        /* ========== ГАЛЕРЕЯ: РОВНО 3 ФОТО В РЯД ========== */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
-        .gallery-item {
-            height: 220px;
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            background: #1a1a1a;
-            min-width: 0;
-        }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .gallery-item { height: 220px; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; background: #1a1a1a; min-width: 0; }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
         .gallery-item:hover img { transform: scale(1.1); }
         
@@ -107,13 +73,54 @@
         .team-card h3 { margin-bottom: 3px; font-size: 17px; }
         .team-card p { margin-bottom: 3px; font-size: 14px; }
         
-        /* КОНТАКТЫ БЕЗ ФОРМЫ */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; max-width: 1000px; margin: 0 auto; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; max-width: 1000px; margin: 0 auto 30px; }
         .contact-item { display: flex; align-items: flex-start; gap: 14px; background: #1a1a1a; border: 1px solid rgba(255,107,0,0.2); border-radius: 12px; padding: 14px 16px; min-width: 0; }
         .contact-item i { font-size: 22px; color: #ff6b00; margin-top: 2px; }
         .contact-item div { font-size: 14px; }
         .contact-item a { color: #fff; text-decoration: none; }
         .contact-item a:hover { color: #ff6b00; }
+
+        /* ========== НОВЫЕ СТИЛИ: ФОРМА И КАРТА ========== */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-form {
+            background: #1a1a1a;
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,107,0,0.2);
+        }
+        .contact-form h3 { color: #ff6b00; margin-bottom: 20px; font-size: 20px; text-align: center; }
+        .form-group { margin-bottom: 16px; }
+        .form-label { display: block; font-size: 13px; color: #ccc; margin-bottom: 6px; font-weight: 600; }
+        .form-input, .form-textarea {
+            width: 100%; padding: 14px 16px; background: #0a0a0a; border: 1px solid #333;
+            border-radius: 8px; color: #fff; font-size: 16px; /* 16px предотвращает зум на iOS */
+            font-family: 'Montserrat', sans-serif; transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input:focus, .form-textarea:focus { outline: none; border-color: #ff6b00; box-shadow: 0 0 0 3px rgba(255,107,0,0.15); }
+        .form-textarea { min-height: 110px; resize: vertical; }
+        .form-btn {
+            width: 100%; padding: 14px; background: linear-gradient(135deg, #ff6b00, #ff8c00);
+            color: #fff; border: none; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s; margin-top: 8px;
+        }
+        .form-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,107,0,0.3); }
+        .form-btn:active { transform: translateY(0); }
+
+        .map-container {
+            border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,107,0,0.2);
+            min-height: 400px; background: #1a1a1a;
+        }
+        .map-container iframe {
+            width: 100%; height: 100%; border: 0; display: block;
+            /* Фильтр делает карту темной, идеально под дизайн сайта */
+            filter: invert(0.9) hue-rotate(180deg) brightness(0.9);
+        }
         
         .faq-item { background: #1a1a1a; margin-bottom: 8px; border-radius: 10px; overflow: hidden; }
         .faq-question { padding: 14px 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; gap: 15px; font-size: 15px; font-weight: 600; }
@@ -122,8 +129,7 @@
         .faq-item.active .faq-answer { padding: 0 18px 14px; max-height: 400px; }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
         
-        /* ========== СТАТИСТИКА: отступы вдвое меньше ========== */
-        .stats { background: linear-gradient(135deg, #ff6b00, #ff8c00); padding: 17px 20px; margin: 0; }   /* было 34px */
+        .stats { background: linear-gradient(135deg, #ff6b00, #ff8c00); padding: 17px 20px; margin: 0; }
         .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; text-align: center; }
         .stat-number { font-size: clamp(2rem, 6vw, 44px); font-weight: 800; margin-bottom: 4px; line-height: 1.1; }
         .stats-grid > div > div:last-child { font-size: 14px; }
@@ -132,39 +138,31 @@
         
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* ========== ПЛАНШЕТ ========== */
         @media (max-width: 900px) {
             .about-grid { grid-template-columns: 1fr; gap: 20px; }
             .gallery-item { height: 180px; }
             .services-grid { gap: 10px; }
             .service-card { padding: 18px 16px; }
+            .contact-wrapper { grid-template-columns: 1fr; } /* Форма и карта друг под другом на планшете */
         }
         
-        /* ========== СМАРТФОН: все зазоры над заголовками вдвое ========== */
         @media (max-width: 768px) {
             nav { padding: 10px 0; }
             .logo { font-size: 20px; }
             .burger { display: block; }
             .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(10,10,10,0.98);
-                flex-direction: column;
-                gap: 0;
-                padding: 6px 0;
-                border-bottom: 1px solid rgba(255,107,0,0.2);
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: rgba(10,10,10,0.98); flex-direction: column; gap: 0;
+                padding: 6px 0; border-bottom: 1px solid rgba(255,107,0,0.2);
             }
             .nav-links.open { display: flex; }
             .nav-links li a { display: block; padding: 11px 22px; font-size: 14px; }
             
-            .hero { min-height: 480px; padding: 85px 16px 20px; }   /* было 40px снизу */
+            .hero { min-height: 480px; padding: 85px 16px 20px; }
             .hero p { margin-bottom: 18px; }
             .btn { padding: 12px 28px; font-size: 15px; }
             
-            section { padding: 14px 14px; }   /* было 28px */
+            section { padding: 14px 14px; }
             h2 { margin-bottom: 16px; }
             
             .services-grid { grid-template-columns: 1fr; gap: 10px; }
@@ -190,7 +188,7 @@
             .faq-answer { padding: 0 14px; font-size: 13px; }
             .faq-item.active .faq-answer { padding: 0 14px 12px; }
             
-            .stats { padding: 13px 14px; }   /* было 26px */
+            .stats { padding: 13px 14px; }
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
             
             .contact-grid { grid-template-columns: 1fr; gap: 8px; }
@@ -198,15 +196,17 @@
             .contact-item i { font-size: 20px; }
             .contact-item div { font-size: 13px; }
             
+            .map-container { min-height: 300px; }
+            
             footer { padding: 18px 14px; }
         }
         
-        /* ========== ОЧЕНЬ МАЛЕНЬКИЙ ЭКРАН ========== */
         @media (max-width: 400px) {
             .gallery-grid { gap: 6px; }
             .gallery-item { height: 95px; border-radius: 6px; }
             .team-grid { grid-template-columns: 1fr; }
             .stats-grid { gap: 12px; }
+            .map-container { min-height: 260px; }
         }
     </style>
 </head>
@@ -229,15 +229,15 @@
     </nav>
 
     <section id="home" class="hero">
-    <div class="hero-content">
-        <h1>Профессиональный автосервис</h1>
-        <p style="text-align: center;">
-            Ремонт любой сложности с гарантией качества.<br>
-            Современные технологии и опытные мастера.
-        </p>
-        <a href="#contact" class="btn">Записаться на ремонт</a>
-    </div>
-</section>
+        <div class="hero-content">
+            <h1>Профессиональный автосервис</h1>
+            <p style="text-align: center;">
+                Ремонт любой сложности с гарантией качества.<br>
+                Современные технологии и опытные мастера.
+            </p>
+            <a href="#contact" class="btn">Записаться на ремонт</a>
+        </div>
+    </section>
 
     <section id="about">
         <h2>О нас</h2>
@@ -246,9 +246,10 @@
             <div>
                 <h3>15 лет безупречной работы</h3>
                 <div>
-    <p>Мы — команда профессионалов с многолетним опытом в ремонте автомобилей любой марки и сложности: от отечественной классики до премиальных иномарок. Наш автосервис оснащён современным оборудованием и лицензионным диагностическим программным обеспечением, что позволяет выполнять работы быстро и качественно. Каждый мастер имеет профильное образование и регулярно проходит повышение квалификации.</p>
-    <p>Помимо текущего ремонта, мы выполняем кузовные работы любой сложности: рихтовку, покраску и полировку после ДТП. Диагностируем и восстанавливаем электрику, устанавливаем сигнализации, аудиосистемы и видеорегистраторы. Обслуживаем кондиционеры и отопители, готовим автомобили к продаже и проводим выездную проверку перед покупкой.</p>
-    <p>Мы ценим каждого клиента и гарантируем честность, прозрачность цен и высокое качество работ.</p>
+                    <p>Мы — команда профессионалов с многолетним опытом в ремонте автомобилей любой марки и сложности: от отечественной классики до премиальных иномарок. Наш автосервис оснащён современным оборудованием и лицензионным диагностическим программным обеспечением, что позволяет выполнять работы быстро и качественно. Каждый мастер имеет профильное образование и регулярно проходит повышение квалификации.</p>
+                    <p>Помимо текущего ремонта, мы выполняем кузовные работы любой сложности: рихтовку, покраску и полировку после ДТП. Диагностируем и восстанавливаем электрику, устанавливаем сигнализации, аудиосистемы и видеорегистраторы. Обслуживаем кондиционеры и отопители, готовим автомобили к продаже и проводим выездную проверку перед покупкой.</p>
+                    <p>Мы ценим каждого клиента и гарантируем честность, прозрачность цен и высокое качество работ.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -378,7 +379,7 @@
         </div>
     </section>
 
-    <!-- КОНТАКТЫ БЕЗ ФОРМЫ -->
+    <!-- ========== КОНТАКТЫ С ФОРМОЙ И КАРТОЙ ========== -->
     <section id="contact">
         <h2>Контакты</h2>
         <div class="contact-grid">
@@ -397,6 +398,32 @@
             <div class="contact-item">
                 <i class="fas fa-clock"></i>
                 <div><strong>Режим работы</strong><br>Пн-Вс: 9:00 - 21:00</div>
+            </div>
+        </div>
+
+        <div class="contact-wrapper">
+            <!-- ФОРМА ОТПРАВКИ -->
+            <!-- ВАЖНО: Зарегистрируйся на https://formspree.io/, создай форму и замени 'YOUR_FORM_ID' в action на свой ID -->
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+                <h3><i class="fas fa-paper-plane"></i> Оставить заявку</h3>
+                <div class="form-group">
+                    <label class="form-label" for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Иван Иванов" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" inputmode="tel" required autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">Сообщение или марка авто</label>
+                    <textarea id="message" name="message" class="form-textarea" placeholder="Например: Toyota Camry, стук в подвеске" required></textarea>
+                </div>
+                <button type="submit" class="form-btn">Отправить заявку</button>
+            </form>
+
+            <!-- ЯНДЕКС КАРТА -->
+            <div class="map-container">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617635%2C55.755814&mode=search&sctx=ZAAAAAgBEAAaKAoSCc2Sj%2FLkFEUaETHI%2B4%2FkFEURiAEiDOz3wJ0BQABaDAgBMgBKAjoBagwIAjIwMjQwMTAxMTHoAQD8AQCoAQC9AQE3MDgwNg%3D%3D&sll=37.617635%2C55.755814&sspn=0.021755%2C0.010803&text=%D0%B0%D0%B2%D1%82%D0%BE%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81&z=15" allowfullscreen="true" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -442,6 +469,7 @@
             });
         });
         
+        // Анимация появления секций при скролле
         const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -453,6 +481,16 @@
         document.querySelectorAll('section').forEach(section => {
             section.style.opacity = '0';
             observer.observe(section);
+        });
+
+        // Демо-обработка формы (если Formspree еще не настроен, покажет красивое уведомление)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Если action содержит YOUR_FORM_ID, перехватываем отправку для демо
+            if(this.action.includes('YOUR_FORM_ID')) {
+                e.preventDefault();
+                alert('✅ Заявка успешно отправлена! (Демо-режим. Для реальной отправки зарегистрируйте бесплатный аккаунт на formspree.io и вставьте свой ID в атрибут action формы)');
+                this.reset();
+            }
         });
     </script>
 </body>
