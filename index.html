@@ -22,23 +22,40 @@
         .nav-links a:hover { color: #ff6b00; }
         .burger { display: none; background: none; border: none; color: #ff6b00; font-size: 24px; cursor: pointer; padding: 5px 10px; }
         
+        /* ========== HERO: фон на всю ширину, низ урезан вдвое ========== */
         .hero {
-            width: 100%; max-width: 100%; margin: 0; min-height: 62vh; padding: 110px 20px 28px;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            min-height: 62vh;
+            padding: 110px 20px 28px;   /* было 55px снизу */
             background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.6)), url('images/hero.jpg') center/cover no-repeat;
-            display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         .hero-content { max-width: 800px; animation: fadeInUp 1s ease-out; }
         .hero h1 {
-            font-size: clamp(1.9rem, 7vw, 56px); font-weight: 800; margin-bottom: 12px; line-height: 1.2; color: #ffa500;
-            text-shadow: 0 0 5px rgba(255, 165, 0, 0.6), 0 0 15px rgba(255, 140, 0, 0.4), 0 0 30px rgba(255, 107, 0, 0.2);
+            font-size: clamp(1.9rem, 7vw, 56px);
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.2;
+            color: #ffa500;
+            text-shadow:
+                0 0 5px rgba(255, 165, 0, 0.6),
+                0 0 15px rgba(255, 140, 0, 0.4),
+                0 0 30px rgba(255, 107, 0, 0.2);
         }
         .hero p { font-size: clamp(0.95rem, 2.6vw, 19px); margin-bottom: 22px; color: #ccc; }
         .btn { display: inline-block; padding: 13px 34px; background: linear-gradient(135deg, #ff6b00, #ff8c00); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 16px; transition: transform 0.3s, box-shadow 0.3s; border: none; cursor: pointer; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,107,0,0.4); }
         
-        section { scroll-margin-top: 80px; padding: 22px 20px; max-width: 1200px; margin: 0 auto; }
+        /* ========== СЕКЦИИ: отступы сверху/снизу вдвое меньше ========== */
+        section { padding: 22px 20px; max-width: 1200px; margin: 0 auto; }   /* было 44px */
         h2 { font-size: clamp(1.5rem, 4vw, 34px); text-align: center; margin-bottom: 22px; color: #ff6b00; }
-        .section-subtitle { text-align: center; color: #ccc; font-size: 16px; margin-top: -15px; margin-bottom: 30px; }
         
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
         .about-grid img { width: 100%; border-radius: 16px; }
@@ -46,7 +63,12 @@
         .about-grid p { font-size: clamp(0.9rem, 2.3vw, 16px); line-height: 1.65; color: #ccc; }
         .about-grid p + p { margin-top: 10px; }
         
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        /* ========== УСЛУГИ: РОВНО 3 В РЯД ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
         .service-card { background: linear-gradient(135deg, #1a1a1a, #0f0f0f); padding: 22px; border-radius: 16px; border: 1px solid rgba(255,107,0,0.2); transition: transform 0.3s, border-color 0.3s; min-width: 0; display: flex; flex-direction: column; }
         .service-card:hover { transform: translateY(-6px); border-color: #ff6b00; }
         .service-icon { font-size: 34px; color: #ff6b00; margin-bottom: 10px; }
@@ -60,8 +82,21 @@
         .pricing-row span:first-child { font-size: 15px; }
         .price { color: #ff6b00; font-weight: 800; font-size: 16px; text-align: right; white-space: nowrap; }
         
-        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-        .gallery-item { height: 220px; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; background: #1a1a1a; min-width: 0; }
+        /* ========== ГАЛЕРЕЯ: РОВНО 3 ФОТО В РЯД ========== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+        .gallery-item {
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: #1a1a1a;
+            min-width: 0;
+        }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
         .gallery-item:hover img { transform: scale(1.1); }
         
@@ -72,16 +107,13 @@
         .team-card h3 { margin-bottom: 3px; font-size: 17px; }
         .team-card p { margin-bottom: 3px; font-size: 14px; }
         
+        /* КОНТАКТЫ БЕЗ ФОРМЫ */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; max-width: 1000px; margin: 0 auto; }
         .contact-item { display: flex; align-items: flex-start; gap: 14px; background: #1a1a1a; border: 1px solid rgba(255,107,0,0.2); border-radius: 12px; padding: 14px 16px; min-width: 0; }
         .contact-item i { font-size: 22px; color: #ff6b00; margin-top: 2px; }
         .contact-item div { font-size: 14px; }
         .contact-item a { color: #fff; text-decoration: none; }
         .contact-item a:hover { color: #ff6b00; }
-        
-        .map-container { max-width: 1000px; margin: 20px auto 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 107, 0, 0.3); box-shadow: 0 8px 24px rgba(255, 107, 0, 0.1); }
-        .map-container iframe { width: 100%; height: 400px; border: 0; display: block; filter: invert(0.9) hue-rotate(180deg) brightness(0.95); }
-        .map-label { text-align: center; margin-top: 12px; font-size: 13px; color: #888; }
         
         .faq-item { background: #1a1a1a; margin-bottom: 8px; border-radius: 10px; overflow: hidden; }
         .faq-question { padding: 14px 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; gap: 15px; font-size: 15px; font-weight: 600; }
@@ -90,116 +122,49 @@
         .faq-item.active .faq-answer { padding: 0 18px 14px; max-height: 400px; }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
         
-        .stats { background: linear-gradient(135deg, #ff6b00, #ff8c00); padding: 17px 20px; margin: 0; }
+        /* ========== СТАТИСТИКА: отступы вдвое меньше ========== */
+        .stats { background: linear-gradient(135deg, #ff6b00, #ff8c00); padding: 17px 20px; margin: 0; }   /* было 34px */
         .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; text-align: center; }
         .stat-number { font-size: clamp(2rem, 6vw, 44px); font-weight: 800; margin-bottom: 4px; line-height: 1.1; }
         .stats-grid > div > div:last-child { font-size: 14px; }
-
-        /* ========== НОВЫЕ СТИЛИ ДЛЯ ФОРМ ========== */
-        .forms-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-top: 10px;
-        }
-        .form-variant {
-            background: #1a1a1a;
-            border: 1px solid rgba(255,107,0,0.2);
-            border-radius: 16px;
-            padding: 28px;
-            transition: border-color 0.3s;
-        }
-        .form-variant:hover { border-color: #ff6b00; }
-        .form-variant h3 {
-            color: #ff6b00;
-            margin-bottom: 20px;
-            font-size: 20px;
-            text-align: center;
-        }
-        .form-group { margin-bottom: 16px; }
-        .form-label {
-            display: block;
-            font-size: 13px;
-            color: #ccc;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-        .form-input, .form-select, .form-textarea {
-            width: 100%;
-            padding: 12px 16px;
-            background: #0a0a0a;
-            border: 1px solid #333;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 16px; /* Предотвращает зум на iOS */
-            font-family: 'Montserrat', sans-serif;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
-            outline: none;
-            border-color: #ff6b00;
-            box-shadow: 0 0 0 3px rgba(255,107,0,0.15);
-        }
-        .form-textarea { min-height: 100px; resize: vertical; }
-        .form-select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ff6b00' stroke-width='2' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
-        
-        .form-btn {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #ff6b00, #ff8c00);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 8px;
-        }
-        .form-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,107,0,0.3); }
-        .form-btn:active { transform: translateY(0); }
-        
-        .form-checkbox { display: flex; align-items: flex-start; gap: 10px; margin-top: 12px; }
-        .form-checkbox input { margin-top: 3px; accent-color: #ff6b00; width: 16px; height: 16px; }
-        .form-checkbox label { font-size: 12px; color: #888; line-height: 1.4; }
-        .form-checkbox a { color: #ff6b00; text-decoration: none; }
-
-        /* CSS-only рейтинг звёздочками */
-        .star-rating { display: flex; flex-direction: row-reverse; justify-content: center; gap: 4px; margin-bottom: 16px; }
-        .star-rating input { display: none; }
-        .star-rating label { font-size: 28px; color: #333; cursor: pointer; transition: color 0.2s; }
-        .star-rating input:checked ~ label, .star-rating label:hover, .star-rating label:hover ~ label { color: #ff6b00; }
         
         footer { background: #0a0a0a; padding: 24px 20px; text-align: center; border-top: 1px solid #2a2a2a; }
         
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         
+        /* ========== ПЛАНШЕТ ========== */
         @media (max-width: 900px) {
             .about-grid { grid-template-columns: 1fr; gap: 20px; }
             .gallery-item { height: 180px; }
             .services-grid { gap: 10px; }
             .service-card { padding: 18px 16px; }
-            .map-container iframe { height: 350px; }
-            .forms-grid { grid-template-columns: 1fr; gap: 16px; } /* Формы в 1 колонку на планшете */
         }
         
+        /* ========== СМАРТФОН: все зазоры над заголовками вдвое ========== */
         @media (max-width: 768px) {
             nav { padding: 10px 0; }
             .logo { font-size: 20px; }
             .burger { display: block; }
             .nav-links {
-                display: none; position: absolute; top: 100%; left: 0; right: 0;
-                background: rgba(10,10,10,0.98); flex-direction: column; gap: 0;
-                padding: 6px 0; border-bottom: 1px solid rgba(255,107,0,0.2);
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10,10,10,0.98);
+                flex-direction: column;
+                gap: 0;
+                padding: 6px 0;
+                border-bottom: 1px solid rgba(255,107,0,0.2);
             }
             .nav-links.open { display: flex; }
             .nav-links li a { display: block; padding: 11px 22px; font-size: 14px; }
             
-            .hero { min-height: 480px; padding: 85px 16px 20px; }
+            .hero { min-height: 480px; padding: 85px 16px 20px; }   /* было 40px снизу */
             .hero p { margin-bottom: 18px; }
             .btn { padding: 12px 28px; font-size: 15px; }
             
-            section { padding: 14px 14px; }
+            section { padding: 14px 14px; }   /* было 28px */
             h2 { margin-bottom: 16px; }
             
             .services-grid { grid-template-columns: 1fr; gap: 10px; }
@@ -225,7 +190,7 @@
             .faq-answer { padding: 0 14px; font-size: 13px; }
             .faq-item.active .faq-answer { padding: 0 14px 12px; }
             
-            .stats { padding: 13px 14px; }
+            .stats { padding: 13px 14px; }   /* было 26px */
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
             
             .contact-grid { grid-template-columns: 1fr; gap: 8px; }
@@ -233,22 +198,15 @@
             .contact-item i { font-size: 20px; }
             .contact-item div { font-size: 13px; }
             
-            .map-container { margin-top: 16px; border-radius: 12px; }
-            .map-container iframe { height: 300px; }
-            .map-label { font-size: 12px; margin-top: 10px; }
-            
-            .form-variant { padding: 20px; }
-            .form-input, .form-select, .form-textarea { padding: 14px 16px; } /* Увеличенная область касания */
-            
             footer { padding: 18px 14px; }
         }
         
+        /* ========== ОЧЕНЬ МАЛЕНЬКИЙ ЭКРАН ========== */
         @media (max-width: 400px) {
             .gallery-grid { gap: 6px; }
             .gallery-item { height: 95px; border-radius: 6px; }
             .team-grid { grid-template-columns: 1fr; }
             .stats-grid { gap: 12px; }
-            .map-container iframe { height: 260px; }
         }
     </style>
 </head>
@@ -265,22 +223,21 @@
                 <li><a href="#gallery">На рабочем месте</a></li>
                 <li><a href="#team">Команда</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#forms-demo">Формы</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
         </div>
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Профессиональный автосервис</h1>
-            <p style="text-align: center;">
-                Ремонт любой сложности с гарантией качества.<br>
-                Современные технологии и опытные мастера.
-            </p>
-            <a href="#forms-demo" class="btn">Записаться на ремонт</a>
-        </div>
-    </section>
+    <div class="hero-content">
+        <h1>Профессиональный автосервис</h1>
+        <p style="text-align: center;">
+            Ремонт любой сложности с гарантией качества.<br>
+            Современные технологии и опытные мастера.
+        </p>
+        <a href="#contact" class="btn">Записаться на ремонт</a>
+    </div>
+</section>
 
     <section id="about">
         <h2>О нас</h2>
@@ -289,10 +246,9 @@
             <div>
                 <h3>15 лет безупречной работы</h3>
                 <div>
-                    <p>Мы — команда профессионалов с многолетним опытом в ремонте автомобилей любой марки и сложности: от отечественной классики до премиальных иномарок. Наш автосервис оснащён современным оборудованием и лицензионным диагностическим программным обеспечением, что позволяет выполнять работы быстро и качественно. Каждый мастер имеет профильное образование и регулярно проходит повышение квалификации.</p>
-                    <p>Помимо текущего ремонта, мы выполняем кузовные работы любой сложности: рихтовку, покраску и полировку после ДТП. Диагностируем и восстанавливаем электрику, устанавливаем сигнализации, аудиосистемы и видеорегистраторы. Обслуживаем кондиционеры и отопители, готовим автомобили к продаже и проводим выездную проверку перед покупкой.</p>
-                    <p>Мы ценим каждого клиента и гарантируем честность, прозрачность цен и высокое качество работ.</p>
-                </div>
+    <p>Мы — команда профессионалов с многолетним опытом в ремонте автомобилей любой марки и сложности: от отечественной классики до премиальных иномарок. Наш автосервис оснащён современным оборудованием и лицензионным диагностическим программным обеспечением, что позволяет выполнять работы быстро и качественно. Каждый мастер имеет профильное образование и регулярно проходит повышение квалификации.</p>
+    <p>Помимо текущего ремонта, мы выполняем кузовные работы любой сложности: рихтовку, покраску и полировку после ДТП. Диагностируем и восстанавливаем электрику, устанавливаем сигнализации, аудиосистемы и видеорегистраторы. Обслуживаем кондиционеры и отопители, готовим автомобили к продаже и проводим выездную проверку перед покупкой.</p>
+    <p>Мы ценим каждого клиента и гарантируем честность, прозрачность цен и высокое качество работ.</p>
             </div>
         </div>
     </section>
@@ -422,107 +378,7 @@
         </div>
     </section>
 
-    <!-- ========== НОВАЯ СЕКЦИЯ: ВАРИАНТЫ ФОРМ ДЛЯ ЗАКАЗЧИКА ========== -->
-    <section id="forms-demo">
-        <h2>Варианты форм связи</h2>
-        <p class="section-subtitle">Выберите подходящий вариант для вашего сайта или скомбинируйте их</p>
-        
-        <div class="forms-grid">
-            <!-- Форма 1: Полная запись -->
-            <div class="form-variant">
-                <h3><i class="fas fa-calendar-check"></i> Полная запись на ремонт</h3>
-                <form onsubmit="event.preventDefault(); alert('Заявка на ремонт отправлена! (Демо-режим)'); this.reset();">
-                    <div class="form-group">
-                        <label class="form-label">Ваше имя</label>
-                        <input type="text" class="form-input" placeholder="Иван Иванов" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Телефон</label>
-                        <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" inputmode="tel" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Тип услуги</label>
-                        <select class="form-select" required>
-                            <option value="" disabled selected>Выберите услугу</option>
-                            <option>Компьютерная диагностика</option>
-                            <option>ТО и обслуживание</option>
-                            <option>Кузовной ремонт</option>
-                            <option>Ремонт двигателя</option>
-                            <option>Другое</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Комментарий</label>
-                        <textarea class="form-textarea" placeholder="Опишите проблему или желаемое время визита"></textarea>
-                    </div>
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="agree1" required checked>
-                        <label for="agree1">Я согласен на <a href="#">обработку персональных данных</a></label>
-                    </div>
-                    <button type="submit" class="form-btn">Записаться на сервис</button>
-                </form>
-            </div>
-
-            <!-- Форма 2: Запрос по VIN -->
-            <div class="form-variant">
-                <h3><i class="fas fa-barcode"></i> Расчёт стоимости по VIN</h3>
-                <form onsubmit="event.preventDefault(); alert('Запрос по VIN отправлен! (Демо-режим)'); this.reset();">
-                    <div class="form-group">
-                        <label class="form-label">VIN-номер автомобиля</label>
-                        <input type="text" class="form-input" placeholder="Например: XTA210930Y2764409" style="text-transform: uppercase;" inputmode="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Ваш телефон</label>
-                        <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" inputmode="tel" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Что нужно сделать?</label>
-                        <textarea class="form-textarea" placeholder="Например: замена масла, колодок и диагностика подвески" required></textarea>
-                    </div>
-                    <button type="submit" class="form-btn">Получить расчёт</button>
-                </form>
-            </div>
-
-            <!-- Форма 3: Быстрый обратный звонок -->
-            <div class="form-variant">
-                <h3><i class="fas fa-phone-alt"></i> Быстрый обратный звонок</h3>
-                <p style="text-align: center; color: #ccc; font-size: 14px; margin-bottom: 20px;">Оставьте номер, и мастер перезвонит вам в течение 5 минут.</p>
-                <form onsubmit="event.preventDefault(); alert('Мы скоро перезвоним! (Демо-режим)'); this.reset();">
-                    <div class="form-group">
-                        <label class="form-label">Ваш номер телефона</label>
-                        <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" inputmode="tel" required>
-                    </div>
-                    <button type="submit" class="form-btn">Жду звонка</button>
-                </form>
-            </div>
-
-            <!-- Форма 4: Оставить отзыв -->
-            <div class="form-variant">
-                <h3><i class="fas fa-star"></i> Оставить отзыв</h3>
-                <form onsubmit="event.preventDefault(); alert('Спасибо за ваш отзыв! (Демо-режим)'); this.reset();">
-                    <div class="star-rating">
-                        <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
-                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-                        <input type="radio" id="star3" name="rating" value="3" checked><label for="star3">★</label>
-                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Ваше имя</label>
-                        <input type="text" class="form-input" placeholder="Как вас зовут?" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Ваш отзыв</label>
-                        <textarea class="form-textarea" placeholder="Расскажите о вашем опыте обслуживания..." required></textarea>
-                    </div>
-                    <button type="submit" class="form-btn">Опубликовать отзыв</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- ========== КОНЕЦ СЕКЦИИ ФОРМ ========== -->
-
-    <!-- КОНТАКТЫ С ЯНДЕКС КАРТОЙ -->
+    <!-- КОНТАКТЫ БЕЗ ФОРМЫ -->
     <section id="contact">
         <h2>Контакты</h2>
         <div class="contact-grid">
@@ -543,11 +399,6 @@
                 <div><strong>Режим работы</strong><br>Пн-Вс: 9:00 - 21:00</div>
             </div>
         </div>
-        
-        <div class="map-container">
-            <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617635%2C55.755814&mode=search&sctx=ZAAAAAgBEAAaKAoSCc2Sj%2FLkFEUaETHI%2B4%2FkFEURiAEiDOz3wJ0BQABaDAgBMgBKAjoBagwIAjIwMjQwMTAxMTHoAQD8AQCoAQC9AQE3MDgwNg%3D%3D&sll=37.617635%2C55.755814&sspn=0.021755%2C0.010803&text=%D0%B0%D0%B2%D1%82%D0%BE%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81&z=15" allowfullscreen="true" style="position:relative;"></iframe>
-        </div>
-        <p class="map-label">📍 г. Москва, ул. Автомобильная, 15 — рядом с ТТК, удобная парковка</p>
     </section>
 
     <footer>
@@ -561,6 +412,7 @@
     </footer>
 
     <script>
+        // Бургер-меню
         const burger = document.getElementById('burger');
         const navLinks = document.getElementById('navLinks');
         burger.addEventListener('click', () => {
@@ -569,6 +421,7 @@
             icon.className = navLinks.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
         });
         
+        // FAQ
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentElement;
@@ -576,6 +429,7 @@
             });
         });
         
+        // Плавный скролл + закрытие меню на мобильном
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
