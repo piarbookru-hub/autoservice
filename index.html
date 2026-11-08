@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>РђРІС‚РѕРњР°СЃС‚РµСЂ PRO - РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ Р°РІС‚РѕСЃРµСЂРІРёСЃ</title>
+    <title>АвтоМастер PRO - Профессиональный автосервис</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,13 +22,13 @@
         .nav-links a:hover { color: #ff6b00; }
         .burger { display: none; background: none; border: none; color: #ff6b00; font-size: 24px; cursor: pointer; padding: 5px 10px; }
         
-        /* ========== HERO: С„РѕРЅ РЅР° РІСЃСЋ С€РёСЂРёРЅСѓ, РЅРёР· СѓСЂРµР·Р°РЅ РІРґРІРѕРµ ========== */
+        /* ========== HERO: фон на всю ширину, низ урезан вдвое ========== */
         .hero {
             width: 100%;
             max-width: 100%;
             margin: 0;
             min-height: 62vh;
-            padding: 110px 20px 28px;
+            padding: 110px 20px 28px;   /* было 55px снизу */
             background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.6)), url('images/hero.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -53,13 +53,8 @@
         .btn { display: inline-block; padding: 13px 34px; background: linear-gradient(135deg, #ff6b00, #ff8c00); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 16px; transition: transform 0.3s, box-shadow 0.3s; border: none; cursor: pointer; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,107,0,0.4); }
         
-        /* ========== РЎР•РљР¦РР: РѕС‚СЃС‚СѓРїС‹ СЃРІРµСЂС…Сѓ/СЃРЅРёР·Сѓ РІРґРІРѕРµ РјРµРЅСЊС€Рµ ========== */
-        section { 
-            scroll-margin-top: 80px; /* РРЎРџР РђР’Р›Р•РќРР•: РѕС‚СЃС‚СѓРї РїСЂРё СЏРєРѕСЂРЅРѕР№ СЃСЃС‹Р»РєРµ */
-            padding: 22px 20px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
+        /* ========== СЕКЦИИ: отступы сверху/снизу вдвое меньше ========== */
+        section { padding: 22px 20px; max-width: 1200px; margin: 0 auto; }   /* было 44px */
         h2 { font-size: clamp(1.5rem, 4vw, 34px); text-align: center; margin-bottom: 22px; color: #ff6b00; }
         
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
@@ -68,7 +63,7 @@
         .about-grid p { font-size: clamp(0.9rem, 2.3vw, 16px); line-height: 1.65; color: #ccc; }
         .about-grid p + p { margin-top: 10px; }
         
-        /* ========== РЈРЎР›РЈР“Р: Р РћР’РќРћ 3 Р’ Р РЇР” ========== */
+        /* ========== УСЛУГИ: РОВНО 3 В РЯД ========== */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -87,7 +82,7 @@
         .pricing-row span:first-child { font-size: 15px; }
         .price { color: #ff6b00; font-weight: 800; font-size: 16px; text-align: right; white-space: nowrap; }
         
-        /* ========== Р“РђР›Р•Р Р•РЇ: Р РћР’РќРћ 3 Р¤РћРўРћ Р’ Р РЇР” ========== */
+        /* ========== ГАЛЕРЕЯ: РОВНО 3 ФОТО В РЯД ========== */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -112,36 +107,13 @@
         .team-card h3 { margin-bottom: 3px; font-size: 17px; }
         .team-card p { margin-bottom: 3px; font-size: 14px; }
         
-        /* РљРћРќРўРђРљРўР« Р‘Р•Р— Р¤РћР РњР« */
+        /* КОНТАКТЫ БЕЗ ФОРМЫ */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; max-width: 1000px; margin: 0 auto; }
         .contact-item { display: flex; align-items: flex-start; gap: 14px; background: #1a1a1a; border: 1px solid rgba(255,107,0,0.2); border-radius: 12px; padding: 14px 16px; min-width: 0; }
         .contact-item i { font-size: 22px; color: #ff6b00; margin-top: 2px; }
         .contact-item div { font-size: 14px; }
         .contact-item a { color: #fff; text-decoration: none; }
         .contact-item a:hover { color: #ff6b00; }
-        
-        /* ========== РЇРќР”Р•РљРЎ РљРђР РўРђ ========== */
-        .map-container {
-            max-width: 1000px;
-            margin: 20px auto 0;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 107, 0, 0.3);
-            box-shadow: 0 8px 24px rgba(255, 107, 0, 0.1);
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 400px;
-            border: 0;
-            display: block;
-            filter: invert(0.9) hue-rotate(180deg) brightness(0.95);
-        }
-        .map-label {
-            text-align: center;
-            margin-top: 12px;
-            font-size: 13px;
-            color: #888;
-        }
         
         .faq-item { background: #1a1a1a; margin-bottom: 8px; border-radius: 10px; overflow: hidden; }
         .faq-question { padding: 14px 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; gap: 15px; font-size: 15px; font-weight: 600; }
@@ -150,8 +122,8 @@
         .faq-item.active .faq-answer { padding: 0 18px 14px; max-height: 400px; }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
         
-        /* ========== РЎРўРђРўРРЎРўРРљРђ: РѕС‚СЃС‚СѓРїС‹ РІРґРІРѕРµ РјРµРЅСЊС€Рµ ========== */
-        .stats { background: linear-gradient(135deg, #ff6b00, #ff8c00); padding: 17px 20px; margin: 0; }
+        /* ========== СТАТИСТИКА: отступы вдвое меньше ========== */
+        .stats { background: linear-gradient(135deg, #ff6b00, #ff8c00); padding: 17px 20px; margin: 0; }   /* было 34px */
         .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; text-align: center; }
         .stat-number { font-size: clamp(2rem, 6vw, 44px); font-weight: 800; margin-bottom: 4px; line-height: 1.1; }
         .stats-grid > div > div:last-child { font-size: 14px; }
@@ -160,16 +132,15 @@
         
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* ========== РџР›РђРќРЁР•Рў ========== */
+        /* ========== ПЛАНШЕТ ========== */
         @media (max-width: 900px) {
             .about-grid { grid-template-columns: 1fr; gap: 20px; }
             .gallery-item { height: 180px; }
             .services-grid { gap: 10px; }
             .service-card { padding: 18px 16px; }
-            .map-container iframe { height: 350px; }
         }
         
-        /* ========== РЎРњРђР РўР¤РћРќ: РІСЃРµ Р·Р°Р·РѕСЂС‹ РЅР°Рґ Р·Р°РіРѕР»РѕРІРєР°РјРё РІРґРІРѕРµ ========== */
+        /* ========== СМАРТФОН: все зазоры над заголовками вдвое ========== */
         @media (max-width: 768px) {
             nav { padding: 10px 0; }
             .logo { font-size: 20px; }
@@ -189,11 +160,11 @@
             .nav-links.open { display: flex; }
             .nav-links li a { display: block; padding: 11px 22px; font-size: 14px; }
             
-            .hero { min-height: 480px; padding: 85px 16px 20px; }
+            .hero { min-height: 480px; padding: 85px 16px 20px; }   /* было 40px снизу */
             .hero p { margin-bottom: 18px; }
             .btn { padding: 12px 28px; font-size: 15px; }
             
-            section { padding: 14px 14px; }
+            section { padding: 14px 14px; }   /* было 28px */
             h2 { margin-bottom: 16px; }
             
             .services-grid { grid-template-columns: 1fr; gap: 10px; }
@@ -219,7 +190,7 @@
             .faq-answer { padding: 0 14px; font-size: 13px; }
             .faq-item.active .faq-answer { padding: 0 14px 12px; }
             
-            .stats { padding: 13px 14px; }
+            .stats { padding: 13px 14px; }   /* было 26px */
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
             
             .contact-grid { grid-template-columns: 1fr; gap: 8px; }
@@ -227,202 +198,197 @@
             .contact-item i { font-size: 20px; }
             .contact-item div { font-size: 13px; }
             
-            .map-container { margin-top: 16px; border-radius: 12px; }
-            .map-container iframe { height: 300px; }
-            .map-label { font-size: 12px; margin-top: 10px; }
-            
             footer { padding: 18px 14px; }
         }
         
-        /* ========== РћР§Р•РќР¬ РњРђР›Р•РќР¬РљРР™ Р­РљР РђРќ ========== */
+        /* ========== ОЧЕНЬ МАЛЕНЬКИЙ ЭКРАН ========== */
         @media (max-width: 400px) {
             .gallery-grid { gap: 6px; }
             .gallery-item { height: 95px; border-radius: 6px; }
             .team-grid { grid-template-columns: 1fr; }
             .stats-grid { gap: 12px; }
-            .map-container iframe { height: 260px; }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">РђР’РўРћРњРђРЎРўР•Р  PRO</div>
-            <button class="burger" id="burger" aria-label="РњРµРЅСЋ"><i class="fas fa-bars"></i></button>
+            <div class="logo">АВТОМАСТЕР PRO</div>
+            <button class="burger" id="burger" aria-label="Меню"><i class="fas fa-bars"></i></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Р“Р»Р°РІРЅР°СЏ</a></li>
-                <li><a href="#about">Рћ РЅР°СЃ</a></li>
-                <li><a href="#services">РЈСЃР»СѓРіРё</a></li>
-                <li><a href="#pricing">Р¦РµРЅС‹</a></li>
-                <li><a href="#gallery">РќР° СЂР°Р±РѕС‡РµРј РјРµСЃС‚Рµ</a></li>
-                <li><a href="#team">РљРѕРјР°РЅРґР°</a></li>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#pricing">Цены</a></li>
+                <li><a href="#gallery">На рабочем месте</a></li>
+                <li><a href="#team">Команда</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">РљРѕРЅС‚Р°РєС‚С‹</a></li>
+                <li><a href="#contact">Контакты</a></li>
             </ul>
         </div>
     </nav>
 
     <section id="home" class="hero">
     <div class="hero-content">
-        <h1>РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ Р°РІС‚РѕСЃРµСЂРІРёСЃ</h1>
+        <h1>Профессиональный автосервис</h1>
         <p style="text-align: center;">
-            Р РµРјРѕРЅС‚ Р»СЋР±РѕР№ СЃР»РѕР¶РЅРѕСЃС‚Рё СЃ РіР°СЂР°РЅС‚РёРµР№ РєР°С‡РµСЃС‚РІР°.<br>
-            РЎРѕРІСЂРµРјРµРЅРЅС‹Рµ С‚РµС…РЅРѕР»РѕРіРёРё Рё РѕРїС‹С‚РЅС‹Рµ РјР°СЃС‚РµСЂР°.
+            Ремонт любой сложности с гарантией качества.<br>
+            Современные технологии и опытные мастера.
         </p>
-        <a href="#contact" class="btn">Р—Р°РїРёСЃР°С‚СЊСЃСЏ РЅР° СЂРµРјРѕРЅС‚</a>
+        <a href="#contact" class="btn">Записаться на ремонт</a>
     </div>
 </section>
 
     <section id="about">
-        <h2>Рћ РЅР°СЃ</h2>
+        <h2>О нас</h2>
         <div class="about-grid">
-            <img src="images/about.jpg" alt="РђРІС‚РѕСЃРµСЂРІРёСЃ">
+            <img src="images/about.jpg" alt="Автосервис">
             <div>
-                <h3>15 Р»РµС‚ Р±РµР·СѓРїСЂРµС‡РЅРѕР№ СЂР°Р±РѕС‚С‹</h3>
+                <h3>15 лет безупречной работы</h3>
                 <div>
-    <p>РњС‹ вЂ” РєРѕРјР°РЅРґР° РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»РѕРІ СЃ РјРЅРѕРіРѕР»РµС‚РЅРёРј РѕРїС‹С‚РѕРј РІ СЂРµРјРѕРЅС‚Рµ Р°РІС‚РѕРјРѕР±РёР»РµР№ Р»СЋР±РѕР№ РјР°СЂРєРё Рё СЃР»РѕР¶РЅРѕСЃС‚Рё: РѕС‚ РѕС‚РµС‡РµСЃС‚РІРµРЅРЅРѕР№ РєР»Р°СЃСЃРёРєРё РґРѕ РїСЂРµРјРёР°Р»СЊРЅС‹С… РёРЅРѕРјР°СЂРѕРє. РќР°С€ Р°РІС‚РѕСЃРµСЂРІРёСЃ РѕСЃРЅР°С‰С‘РЅ СЃРѕРІСЂРµРјРµРЅРЅС‹Рј РѕР±РѕСЂСѓРґРѕРІР°РЅРёРµРј Рё Р»РёС†РµРЅР·РёРѕРЅРЅС‹Рј РґРёР°РіРЅРѕСЃС‚РёС‡РµСЃРєРёРј РїСЂРѕРіСЂР°РјРјРЅС‹Рј РѕР±РµСЃРїРµС‡РµРЅРёРµРј, С‡С‚Рѕ РїРѕР·РІРѕР»СЏРµС‚ РІС‹РїРѕР»РЅСЏС‚СЊ СЂР°Р±РѕС‚С‹ Р±С‹СЃС‚СЂРѕ Рё РєР°С‡РµСЃС‚РІРµРЅРЅРѕ. РљР°Р¶РґС‹Р№ РјР°СЃС‚РµСЂ РёРјРµРµС‚ РїСЂРѕС„РёР»СЊРЅРѕРµ РѕР±СЂР°Р·РѕРІР°РЅРёРµ Рё СЂРµРіСѓР»СЏСЂРЅРѕ РїСЂРѕС…РѕРґРёС‚ РїРѕРІС‹С€РµРЅРёРµ РєРІР°Р»РёС„РёРєР°С†РёРё.</p>
-    <p>РџРѕРјРёРјРѕ С‚РµРєСѓС‰РµРіРѕ СЂРµРјРѕРЅС‚Р°, РјС‹ РІС‹РїРѕР»РЅСЏРµРј РєСѓР·РѕРІРЅС‹Рµ СЂР°Р±РѕС‚С‹ Р»СЋР±РѕР№ СЃР»РѕР¶РЅРѕСЃС‚Рё: СЂРёС…С‚РѕРІРєСѓ, РїРѕРєСЂР°СЃРєСѓ Рё РїРѕР»РёСЂРѕРІРєСѓ РїРѕСЃР»Рµ Р”РўРџ. Р”РёР°РіРЅРѕСЃС‚РёСЂСѓРµРј Рё РІРѕСЃСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЌР»РµРєС‚СЂРёРєСѓ, СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃРёРіРЅР°Р»РёР·Р°С†РёРё, Р°СѓРґРёРѕСЃРёСЃС‚РµРјС‹ Рё РІРёРґРµРѕСЂРµРіРёСЃС‚СЂР°С‚РѕСЂС‹. РћР±СЃР»СѓР¶РёРІР°РµРј РєРѕРЅРґРёС†РёРѕРЅРµСЂС‹ Рё РѕС‚РѕРїРёС‚РµР»Рё, РіРѕС‚РѕРІРёРј Р°РІС‚РѕРјРѕР±РёР»Рё Рє РїСЂРѕРґР°Р¶Рµ Рё РїСЂРѕРІРѕРґРёРј РІС‹РµР·РґРЅСѓСЋ РїСЂРѕРІРµСЂРєСѓ РїРµСЂРµРґ РїРѕРєСѓРїРєРѕР№.</p>
-    <p>РњС‹ С†РµРЅРёРј РєР°Р¶РґРѕРіРѕ РєР»РёРµРЅС‚Р° Рё РіР°СЂР°РЅС‚РёСЂСѓРµРј С‡РµСЃС‚РЅРѕСЃС‚СЊ, РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ С†РµРЅ Рё РІС‹СЃРѕРєРѕРµ РєР°С‡РµСЃС‚РІРѕ СЂР°Р±РѕС‚.</p>
+    <p>Мы — команда профессионалов с многолетним опытом в ремонте автомобилей любой марки и сложности: от отечественной классики до премиальных иномарок. Наш автосервис оснащён современным оборудованием и лицензионным диагностическим программным обеспечением, что позволяет выполнять работы быстро и качественно. Каждый мастер имеет профильное образование и регулярно проходит повышение квалификации.</p>
+    <p>Помимо текущего ремонта, мы выполняем кузовные работы любой сложности: рихтовку, покраску и полировку после ДТП. Диагностируем и восстанавливаем электрику, устанавливаем сигнализации, аудиосистемы и видеорегистраторы. Обслуживаем кондиционеры и отопители, готовим автомобили к продаже и проводим выездную проверку перед покупкой.</p>
+    <p>Мы ценим каждого клиента и гарантируем честность, прозрачность цен и высокое качество работ.</p>
             </div>
         </div>
     </section>
 
     <div class="stats">
         <div class="stats-grid">
-            <div><div class="stat-number">15+</div><div>Р›РµС‚ РѕРїС‹С‚Р°</div></div>
-            <div><div class="stat-number">10000+</div><div>Р”РѕРІРѕР»СЊРЅС‹С… РєР»РёРµРЅС‚РѕРІ</div></div>
-            <div><div class="stat-number">25+</div><div>РЎРїРµС†РёР°Р»РёСЃС‚РѕРІ</div></div>
-            <div><div class="stat-number">98%</div><div>Р РµРєРѕРјРµРЅРґСѓСЋС‚ РЅР°СЃ</div></div>
+            <div><div class="stat-number">15+</div><div>Лет опыта</div></div>
+            <div><div class="stat-number">10000+</div><div>Довольных клиентов</div></div>
+            <div><div class="stat-number">25+</div><div>Специалистов</div></div>
+            <div><div class="stat-number">98%</div><div>Рекомендуют нас</div></div>
         </div>
     </div>
 
     <section id="services">
-        <h2>РќР°С€Рё СѓСЃР»СѓРіРё</h2>
+        <h2>Наши услуги</h2>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-laptop"></i></div>
-                <h3>Р”РёР°РіРЅРѕСЃС‚РёРєР°</h3>
-                <p>РљРѕРјРїСЊСЋС‚РµСЂРЅР°СЏ РґРёР°РіРЅРѕСЃС‚РёРєР° РІСЃРµС… СЃРёСЃС‚РµРј Р°РІС‚РѕРјРѕР±РёР»СЏ. Р’С‹СЏРІР»РµРЅРёРµ РЅРµРёСЃРїСЂР°РІРЅРѕСЃС‚РµР№ РЅР° СЂР°РЅРЅРµР№ СЃС‚Р°РґРёРё.</p>
+                <h3>Диагностика</h3>
+                <p>Компьютерная диагностика всех систем автомобиля. Выявление неисправностей на ранней стадии.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-oil-can"></i></div>
-                <h3>РўРћ Рё РѕР±СЃР»СѓР¶РёРІР°РЅРёРµ</h3>
-                <p>РџР»Р°РЅРѕРІРѕРµ С‚РµС…РЅРёС‡РµСЃРєРѕРµ РѕР±СЃР»СѓР¶РёРІР°РЅРёРµ, Р·Р°РјРµРЅР° РјР°СЃР»Р°, С„РёР»СЊС‚СЂРѕРІ, С‚РѕСЂРјРѕР·РЅС‹С… РєРѕР»РѕРґРѕРє.</p>
+                <h3>ТО и обслуживание</h3>
+                <p>Плановое техническое обслуживание, замена масла, фильтров, тормозных колодок.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-car-crash"></i></div>
-                <h3>РљСѓР·РѕРІРЅРѕР№ СЂРµРјРѕРЅС‚</h3>
-                <p>Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїРѕСЃР»Рµ Р”РўРџ, СЂРёС…С‚РѕРІРєР°, РїРѕРєСЂР°СЃРєР°, РїРѕР»РёСЂРѕРІРєР° РєСѓР·РѕРІР°.</p>
+                <h3>Кузовной ремонт</h3>
+                <p>Восстановление после ДТП, рихтовка, покраска, полировка кузова.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-gears"></i></div>
-                <h3>Р РµРјРѕРЅС‚ РґРІРёРіР°С‚РµР»СЏ</h3>
-                <p>РљР°РїРёС‚Р°Р»СЊРЅС‹Р№ Рё С‚РµРєСѓС‰РёР№ СЂРµРјРѕРЅС‚ РґРІРёРіР°С‚РµР»РµР№ Р»СЋР±РѕР№ СЃР»РѕР¶РЅРѕСЃС‚Рё.</p>
+                <h3>Ремонт двигателя</h3>
+                <p>Капитальный и текущий ремонт двигателей любой сложности.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-car-battery"></i></div>
-                <h3>Р­Р»РµРєС‚СЂРёРєР°</h3>
-                <p>Р”РёР°РіРЅРѕСЃС‚РёРєР° Рё СЂРµРјРѕРЅС‚ СЌР»РµРєС‚СЂРѕРѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ, СѓСЃС‚Р°РЅРѕРІРєР° СЃРёРіРЅР°Р»РёР·Р°С†РёР№.</p>
+                <h3>Электрика</h3>
+                <p>Диагностика и ремонт электрооборудования, установка сигнализаций.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-rotate"></i></div>
-                <h3>РЁРёРЅРѕРјРѕРЅС‚Р°Р¶</h3>
-                <p>РЎРµР·РѕРЅРЅР°СЏ Р·Р°РјРµРЅР° С€РёРЅ, Р±Р°Р»Р°РЅСЃРёСЂРѕРІРєР°, СЂРµРјРѕРЅС‚ РїСЂРѕРєРѕР»РѕРІ.</p>
+                <h3>Шиномонтаж</h3>
+                <p>Сезонная замена шин, балансировка, ремонт проколов.</p>
             </div>
         </div>
     </section>
 
     <section id="pricing">
-        <h2>Р¦РµРЅС‹ РЅР° СѓСЃР»СѓРіРё</h2>
+        <h2>Цены на услуги</h2>
         <div class="pricing-table">
-            <div class="pricing-row"><span>РљРѕРјРїСЊСЋС‚РµСЂРЅР°СЏ РґРёР°РіРЅРѕСЃС‚РёРєР°</span><span class="price">РѕС‚ 1 500 в‚Ѕ</span></div>
-            <div class="pricing-row"><span>Р—Р°РјРµРЅР° РјР°СЃР»Р° Рё С„РёР»СЊС‚СЂРѕРІ</span><span class="price">РѕС‚ 2 000 в‚Ѕ</span></div>
-            <div class="pricing-row"><span>Р—Р°РјРµРЅР° С‚РѕСЂРјРѕР·РЅС‹С… РєРѕР»РѕРґРѕРє</span><span class="price">РѕС‚ 1 800 в‚Ѕ</span></div>
-            <div class="pricing-row"><span>Р—Р°РјРµРЅР° СЂРµРјРЅСЏ Р“Р Рњ</span><span class="price">РѕС‚ 8 000 в‚Ѕ</span></div>
-            <div class="pricing-row"><span>Р РµРјРѕРЅС‚ РїРѕРґРІРµСЃРєРё</span><span class="price">РѕС‚ 5 000 в‚Ѕ</span></div>
-            <div class="pricing-row"><span>РљСѓР·РѕРІРЅРѕР№ СЂРµРјРѕРЅС‚ (СЌР»РµРјРµРЅС‚)</span><span class="price">РѕС‚ 7 000 в‚Ѕ</span></div>
-            <div class="pricing-row"><span>РџРѕРєСЂР°СЃРєР° СЌР»РµРјРµРЅС‚Р°</span><span class="price">РѕС‚ 9 000 в‚Ѕ</span></div>
-            <div class="pricing-row"><span>РЁРёРЅРѕРјРѕРЅС‚Р°Р¶ (4 РєРѕР»РµСЃР°)</span><span class="price">РѕС‚ 2 500 в‚Ѕ</span></div>
+            <div class="pricing-row"><span>Компьютерная диагностика</span><span class="price">от 1 500 ₽</span></div>
+            <div class="pricing-row"><span>Замена масла и фильтров</span><span class="price">от 2 000 ₽</span></div>
+            <div class="pricing-row"><span>Замена тормозных колодок</span><span class="price">от 1 800 ₽</span></div>
+            <div class="pricing-row"><span>Замена ремня ГРМ</span><span class="price">от 8 000 ₽</span></div>
+            <div class="pricing-row"><span>Ремонт подвески</span><span class="price">от 5 000 ₽</span></div>
+            <div class="pricing-row"><span>Кузовной ремонт (элемент)</span><span class="price">от 7 000 ₽</span></div>
+            <div class="pricing-row"><span>Покраска элемента</span><span class="price">от 9 000 ₽</span></div>
+            <div class="pricing-row"><span>Шиномонтаж (4 колеса)</span><span class="price">от 2 500 ₽</span></div>
         </div>
     </section>
 
     <section id="gallery">
-        <h2>РќР° СЂР°Р±РѕС‡РµРј РјРµСЃС‚Рµ</h2>
+        <h2>На рабочем месте</h2>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/work1.jpg" alt="РќР° СЂР°Р±РѕС‡РµРј РјРµСЃС‚Рµ 1"></div>
-            <div class="gallery-item"><img src="images/work2.jpg" alt="РќР° СЂР°Р±РѕС‡РµРј РјРµСЃС‚Рµ 2"></div>
-            <div class="gallery-item"><img src="images/work3.jpg" alt="РќР° СЂР°Р±РѕС‡РµРј РјРµСЃС‚Рµ 3"></div>
-            <div class="gallery-item"><img src="images/work4.jpg" alt="РќР° СЂР°Р±РѕС‡РµРј РјРµСЃС‚Рµ 4"></div>
-            <div class="gallery-item"><img src="images/work5.jpg" alt="РќР° СЂР°Р±РѕС‡РµРј РјРµСЃС‚Рµ 5"></div>
-            <div class="gallery-item"><img src="images/work6.jpg" alt="РќР° СЂР°Р±РѕС‡РµРј РјРµСЃС‚Рµ 6"></div>
+            <div class="gallery-item"><img src="images/work1.jpg" alt="На рабочем месте 1"></div>
+            <div class="gallery-item"><img src="images/work2.jpg" alt="На рабочем месте 2"></div>
+            <div class="gallery-item"><img src="images/work3.jpg" alt="На рабочем месте 3"></div>
+            <div class="gallery-item"><img src="images/work4.jpg" alt="На рабочем месте 4"></div>
+            <div class="gallery-item"><img src="images/work5.jpg" alt="На рабочем месте 5"></div>
+            <div class="gallery-item"><img src="images/work6.jpg" alt="На рабочем месте 6"></div>
         </div>
     </section>
 
     <section id="team">
-        <h2>РќР°С€Р° РєРѕРјР°РЅРґР°</h2>
+        <h2>Наша команда</h2>
         <div class="team-grid">
             <div class="team-card">
-                <img src="images/team1.jpg" alt="РњР°СЃС‚РµСЂ" class="team-photo">
-                <h3>РРІР°РЅ РџРµС‚СЂРѕРІ</h3>
-                <p style="color: #ff6b00;">Р“Р»Р°РІРЅС‹Р№ РјРµС…Р°РЅРёРє</p>
-                <p>РћРїС‹С‚ СЂР°Р±РѕС‚С‹: 20 Р»РµС‚</p>
+                <img src="images/team1.jpg" alt="Мастер" class="team-photo">
+                <h3>Иван Петров</h3>
+                <p style="color: #ff6b00;">Главный механик</p>
+                <p>Опыт работы: 20 лет</p>
             </div>
             <div class="team-card">
-                <img src="images/team2.jpg" alt="РњР°СЃС‚РµСЂ" class="team-photo">
-                <h3>РЎРµСЂРіРµР№ РРІР°РЅРѕРІ</h3>
-                <p style="color: #ff6b00;">Р”РёР°РіРЅРѕСЃС‚</p>
-                <p>РћРїС‹С‚ СЂР°Р±РѕС‚С‹: 15 Р»РµС‚</p>
+                <img src="images/team2.jpg" alt="Мастер" class="team-photo">
+                <h3>Сергей Иванов</h3>
+                <p style="color: #ff6b00;">Диагност</p>
+                <p>Опыт работы: 15 лет</p>
             </div>
             <div class="team-card">
-                <img src="images/team3.jpg" alt="РњР°СЃС‚РµСЂ" class="team-photo">
-                <h3>РђР»РµРєСЃРµР№ РЎРјРёСЂРЅРѕРІ</h3>
-                <p style="color: #ff6b00;">РљСѓР·РѕРІС‰РёРє</p>
-                <p>РћРїС‹С‚ СЂР°Р±РѕС‚С‹: 18 Р»РµС‚</p>
+                <img src="images/team3.jpg" alt="Мастер" class="team-photo">
+                <h3>Алексей Смирнов</h3>
+                <p style="color: #ff6b00;">Кузовщик</p>
+                <p>Опыт работы: 18 лет</p>
             </div>
             <div class="team-card">
-                <img src="images/team4.jpg" alt="РњР°СЃС‚РµСЂ" class="team-photo">
-                <h3>РњРёС…Р°РёР» РљРѕР·Р»РѕРІ</h3>
-                <p style="color: #ff6b00;">Р­Р»РµРєС‚СЂРёРє</p>
-                <p>РћРїС‹С‚ СЂР°Р±РѕС‚С‹: 12 Р»РµС‚</p>
+                <img src="images/team4.jpg" alt="Мастер" class="team-photo">
+                <h3>Михаил Козлов</h3>
+                <p style="color: #ff6b00;">Электрик</p>
+                <p>Опыт работы: 12 лет</p>
             </div>
         </div>
     </section>
 
     <section id="faq">
-        <h2>Р§Р°СЃС‚С‹Рµ РІРѕРїСЂРѕСЃС‹</h2>
+        <h2>Частые вопросы</h2>
         <div class="faq-item">
-            <div class="faq-question"><span>РљР°Рє Р·Р°РїРёСЃР°С‚СЊСЃСЏ РЅР° СЂРµРјРѕРЅС‚?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer">Р’С‹ РјРѕР¶РµС‚Рµ Р·Р°РїРёСЃР°С‚СЊСЃСЏ РїРѕ С‚РµР»РµС„РѕРЅСѓ РёР»Рё РїСЂРѕСЃС‚Рѕ РїСЂРёРµС…Р°С‚СЊ Рє РЅР°Рј. РњС‹ СЂР°Р±РѕС‚Р°РµРј Р±РµР· РІС‹С…РѕРґРЅС‹С… СЃ 9:00 РґРѕ 21:00.</div>
+            <div class="faq-question"><span>Как записаться на ремонт?</span><i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Вы можете записаться по телефону или просто приехать к нам. Мы работаем без выходных с 9:00 до 21:00.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-question"><span>Р”Р°С‘С‚Рµ Р»Рё РІС‹ РіР°СЂР°РЅС‚РёСЋ РЅР° СЂР°Р±РѕС‚С‹?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer">Р”Р°, РјС‹ РґР°С‘Рј РіР°СЂР°РЅС‚РёСЋ РЅР° РІСЃРµ РІРёРґС‹ СЂР°Р±РѕС‚ РѕС‚ 6 РјРµСЃСЏС†РµРІ РґРѕ 2 Р»РµС‚ РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ С‚РёРїР° СЂРµРјРѕРЅС‚Р°.</div>
+            <div class="faq-question"><span>Даёте ли вы гарантию на работы?</span><i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Да, мы даём гарантию на все виды работ от 6 месяцев до 2 лет в зависимости от типа ремонта.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-question"><span>РњРѕР¶РЅРѕ Р»Рё РїСЂРёРµС…Р°С‚СЊ СЃРѕ СЃРІРѕРёРјРё Р·Р°РїС‡Р°СЃС‚СЏРјРё?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer">РљРѕРЅРµС‡РЅРѕ! Р’С‹ РјРѕР¶РµС‚Рµ РїСЂРёРІРµР·С‚Рё СЃРІРѕРё Р·Р°РїС‡Р°СЃС‚Рё, Рё РјС‹ СѓСЃС‚Р°РЅРѕРІРёРј РёС…. РўР°РєР¶Рµ РјС‹ РјРѕР¶РµРј РїРѕРјРѕС‡СЊ СЃ РїРѕРґР±РѕСЂРѕРј Рё Р·Р°РєСѓРїРєРѕР№ Р·Р°РїС‡Р°СЃС‚РµР№ РїРѕ РІС‹РіРѕРґРЅС‹Рј С†РµРЅР°Рј.</div>
+            <div class="faq-question"><span>Можно ли приехать со своими запчастями?</span><i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Конечно! Вы можете привезти свои запчасти, и мы установим их. Также мы можем помочь с подбором и закупкой запчастей по выгодным ценам.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-question"><span>РЎРєРѕР»СЊРєРѕ РІСЂРµРјРµРЅРё Р·Р°РЅРёРјР°РµС‚ СЂРµРјРѕРЅС‚?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer">Р’СЂРµРјСЏ Р·Р°РІРёСЃРёС‚ РѕС‚ СЃР»РѕР¶РЅРѕСЃС‚Рё СЂР°Р±РѕС‚. РџСЂРѕСЃС‚РѕРµ РўРћ вЂ” 1-2 С‡Р°СЃР°, СЃСЂРµРґРЅРёР№ СЂРµРјРѕРЅС‚ вЂ” 1 РґРµРЅСЊ, СЃР»РѕР¶РЅС‹Р№ РєСѓР·РѕРІРЅРѕР№ СЂРµРјРѕРЅС‚ вЂ” 3-7 РґРЅРµР№. РњС‹ РІСЃРµРіРґР° РЅР°Р·С‹РІР°РµРј С‚РѕС‡РЅС‹Рµ СЃСЂРѕРєРё РїРѕСЃР»Рµ РґРёР°РіРЅРѕСЃС‚РёРєРё.</div>
+            <div class="faq-question"><span>Сколько времени занимает ремонт?</span><i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Время зависит от сложности работ. Простое ТО — 1-2 часа, средний ремонт — 1 день, сложный кузовной ремонт — 3-7 дней. Мы всегда называем точные сроки после диагностики.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-question"><span>Р Р°Р±РѕС‚Р°РµС‚Рµ Р»Рё РІС‹ СЃ СЋСЂРёРґРёС‡РµСЃРєРёРјРё Р»РёС†Р°РјРё?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer">Р”Р°, РјС‹ СЂР°Р±РѕС‚Р°РµРј РєР°Рє СЃ С„РёР·РёС‡РµСЃРєРёРјРё, С‚Р°Рє Рё СЃ СЋСЂРёРґРёС‡РµСЃРєРёРјРё Р»РёС†Р°РјРё. РџСЂРµРґРѕСЃС‚Р°РІР»СЏРµРј РІСЃРµ РЅРµРѕР±С…РѕРґРёРјС‹Рµ РґРѕРєСѓРјРµРЅС‚С‹ РґР»СЏ Р±СѓС…РіР°Р»С‚РµСЂРёРё.</div>
+            <div class="faq-question"><span>Работаете ли вы с юридическими лицами?</span><i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Да, мы работаем как с физическими, так и с юридическими лицами. Предоставляем все необходимые документы для бухгалтерии.</div>
         </div>
     </section>
 
-    <!-- РљРћРќРўРђРљРўР« РЎ РЇРќР”Р•РљРЎ РљРђР РўРћР™ -->
+    <!-- КОНТАКТЫ БЕЗ ФОРМЫ -->
     <section id="contact">
-        <h2>РљРѕРЅС‚Р°РєС‚С‹</h2>
+        <h2>Контакты</h2>
         <div class="contact-grid">
             <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
-                <div><strong>РђРґСЂРµСЃ</strong><br>Рі. РњРѕСЃРєРІР°, СѓР». РђРІС‚РѕРјРѕР±РёР»СЊРЅР°СЏ, 15</div>
+                <div><strong>Адрес</strong><br>г. Москва, ул. Автомобильная, 15</div>
             </div>
             <div class="contact-item">
                 <i class="fas fa-phone"></i>
-                <div><strong>РўРµР»РµС„РѕРЅ</strong><br><a href="tel:+79991234567">+7 (999) 123-45-67</a></div>
+                <div><strong>Телефон</strong><br><a href="tel:+79991234567">+7 (999) 123-45-67</a></div>
             </div>
             <div class="contact-item">
                 <i class="fas fa-envelope"></i>
@@ -430,20 +396,14 @@
             </div>
             <div class="contact-item">
                 <i class="fas fa-clock"></i>
-                <div><strong>Р РµР¶РёРј СЂР°Р±РѕС‚С‹</strong><br>РџРЅ-Р’СЃ: 9:00 - 21:00</div>
+                <div><strong>Режим работы</strong><br>Пн-Вс: 9:00 - 21:00</div>
             </div>
         </div>
-        
-        <!-- РЇРќР”Р•РљРЎ РљРђР РўРђ -->
-        <div class="map-container">
-            <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617635%2C55.755814&mode=search&sctx=ZAAAAAgBEAAaKAoSCc2Sj%2FLkFEUaETHI%2B4%2FkFEURiAEiDOz3wJ0BQABaDAgBMgBKAjoBagwIAjIwMjQwMTAxMTHoAQD8AQCoAQC9AQE3MDgwNg%3D%3D&sll=37.617635%2C55.755814&sspn=0.021755%2C0.010803&text=%D0%B0%D0%B2%D1%82%D0%BE%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81&z=15" allowfullscreen="true" style="position:relative;"></iframe>
-        </div>
-        <p class="map-label">рџ“Ќ Рі. РњРѕСЃРєРІР°, СѓР». РђРІС‚РѕРјРѕР±РёР»СЊРЅР°СЏ, 15 вЂ” СЂСЏРґРѕРј СЃ РўРўРљ, СѓРґРѕР±РЅР°СЏ РїР°СЂРєРѕРІРєР°</p>
     </section>
 
     <footer>
-        <div class="logo" style="margin-bottom: 10px;">РђР’РўРћРњРђРЎРўР•Р  PRO</div>
-        <p style="font-size: 13px;">В© 2026 Р’СЃРµ РїСЂР°РІР° Р·Р°С‰РёС‰РµРЅС‹</p>
+        <div class="logo" style="margin-bottom: 10px;">АВТОМАСТЕР PRO</div>
+        <p style="font-size: 13px;">© 2026 Все права защищены</p>
         <div style="margin-top: 10px;">
             <a href="#" style="color: #ff6b00; margin: 0 12px; font-size: 20px;"><i class="fab fa-vk"></i></a>
             <a href="#" style="color: #ff6b00; margin: 0 12px; font-size: 20px;"><i class="fab fa-telegram"></i></a>
@@ -452,7 +412,7 @@
     </footer>
 
     <script>
-        // Р‘СѓСЂРіРµСЂ-РјРµРЅСЋ
+        // Бургер-меню
         const burger = document.getElementById('burger');
         const navLinks = document.getElementById('navLinks');
         burger.addEventListener('click', () => {
@@ -469,7 +429,7 @@
             });
         });
         
-        // РџР»Р°РІРЅС‹Р№ СЃРєСЂРѕР»Р» + Р·Р°РєСЂС‹С‚РёРµ РјРµРЅСЋ РЅР° РјРѕР±РёР»СЊРЅРѕРј
+        // Плавный скролл + закрытие меню на мобильном
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
